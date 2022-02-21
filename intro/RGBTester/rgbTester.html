@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>RGB Tester</title>
+    <link rel='stylesheet' href='rgbTester.css'></link>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <h1>RGB Tester: Guess the code</h1>
+    <p>RGB is the way a computer "thinks" about colors. Given a random color, try to guess the code that represents it. First pick a color resolution (bpc) and generate a color. Then choose the code that you think best represents that color.</p>
+    <div id="controls">
+      <div class="control">
+        <span id="bpc">1</span> bit(s) per color: <span id="bpc">1</span><input id="bpcControl" type="range" min="1" max="8" value="1" onchange="bpcChange(event);"></input>8 <button onclick="showRandomColor(event);">Generate</buton>
+      </div>
+    </div>
+    <div id="guessCodeControls">
+      <div class="color"><h3>Color to guess</h3><div id="colorToGuess"></div></div>
+      <div id="yourColor" class="color"><h3>Color you guessed</h3><div id="colorYouGuessed"></div></div>
+      <div class="control">
+        <p>Choose a code for this color:
+          <input id="codeGuess" size="3" maxLength="3" disabled></input>
+          Base:
+          <select id="baseSystem" value="2" onchange="changeBase(event)">
+            <option id="binaryBase" value="2">binary</option>
+            <!--
+            <option value="10" disabled>decimal</option>
+            -->
+            <option id="hexBase" value="16" disabled>hexadecimal</option>
+          </select>
+        </p>
+      </div>
+      <button id="checkGuess" onclick="checkCodeGuess(event);" disabled>Check Guess</button>
+    </div>
+    <p id="guessCodeError"></p>
+    <div id="guessCodeResults">
+      <h2>RGB Tester Results</h2>
+      <p>For: <span id="resultsBPC"></span> BPC</p>
+      <table>
+        <tr><th>Color </th><th>Representation</th></tr>
+        <tr><td>Actual</td><td class="colorRepr"><span id="actualColorR"><span class="correct"></span><span class="incorrect"></span></span><span id="actualColorG"><span class="correct"></span><span class="incorrect"></span></span><span id="actualColorB"><span class="correct"></span><span class="incorrect"></span></span></td>
+        </tr>
+        <tr><td>Guess</td><td class="colorRepr"><span id="guessColorR"><span class="correct"></span><span class="incorrect"></span></span><span id="guessColorG"><span class="correct"></span><span class="incorrect"></span></span><span id="guessColorB"><span class="correct"></span><span class="incorrect"></span></span></td>
+        </tr>
+      </table>
+      <p>Percentage Off: <span id="guessCodePercentageOff"></span>%</p>
+      <p>Percentage Correct: <span id="guessCodePercentageCorrect"></span>%</p>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script src="rgbTester.js"></script>
+  </body>
+</html>

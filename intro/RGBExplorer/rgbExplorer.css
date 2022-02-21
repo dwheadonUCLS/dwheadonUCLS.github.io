@@ -1,0 +1,96 @@
+h1, p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+canvas {
+  border: 2px solid black;
+}
+
+#drawing {
+  background-color: black;
+}
+
+#color {
+  font-family: monospace;
+  font-size: 14pt;
+  margin-bottom: 0.5em;
+  margin-left: 50px;
+}
+
+#controls {
+  padding: 10px;
+  padding-top: 50px;
+}
+
+div.control {
+  white-space: nowrap;
+  margin-bottom: 6px;
+}
+
+#bpcControls {
+  margin-bottom: 20px;
+}
+
+#colorCodes {
+  margin-top: 20px;
+}
+
+.slider {
+  width: 300px;
+}
+
+i {
+  cursor: default;
+}
+
+td {
+  vertical-align: top;
+}
+
+#spectrumHighlight {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid white;
+}
+
+#bRRepr, #hRRepr {
+  color: #F00;
+}
+#bGRepr, #hGRepr {
+  color: #0F0;
+}
+#bBRepr, #hBRepr {
+  color: #00F;
+}
+
+div.canvas {
+  display: inline-block;
+}
+
+#highlightWrapper {
+  position: relative;
+}
+
+h2 {
+  margin: 0;
+  text-align: center;
+}
+
+input[type="range"] {
+  position: relative;
+  top: 0.1em;
+}
+
+.colorRepr {
+  font-family: monospace;
+  font-size: 1.4em;
+}

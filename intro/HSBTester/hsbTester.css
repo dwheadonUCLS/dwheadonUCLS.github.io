@@ -1,0 +1,95 @@
+p {
+  max-width: 600px;
+  margin: 0;
+}
+
+table {
+  margin: 10px 0 10px 0;
+}
+
+canvas {
+  border: 2px solid black;
+}
+
+#drawing {
+  background-color: black;
+}
+
+#color {
+  font-family: monospace;
+  font-size: 14pt;
+  margin-bottom: 0.5em;
+  margin-left: 50px;
+}
+
+#controls {
+  padding: 10px;
+}
+
+div.control {
+  white-space: nowrap;
+}
+
+.slider {
+  width: 300px;
+}
+
+i {
+  cursor: default;
+}
+
+td {
+  position: relative;
+}
+
+#bRRepr, #hRRepr {
+  color: #F00;
+}
+#bGRepr, #hGRepr {
+  color: #0F0;
+}
+#bBRepr, #hBRepr {
+  color: #00F;
+}
+
+#colorYouChose, #colorActual {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+#chosenColor, #actualColor {
+  display: none;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+h2 {
+  margin: 0
+}
+
+h3 {
+  margin-bottom: 0;
+}
+
+#checkGuess {
+  margin: 0 0 10px 0;
+}
+
+#guessResults, #colorToGuess, #hue, #saturation, #brightness, #checkGuess {
+  display: none;
+}
+
+#bRRepr, #bGRepr, #bBRepr, #hRRepr, #hGRepr, #hBRepr {
+  font-family: monospace;
+}
+
+input[type="range"] {
+  position: relative;
+  top: 0.1em;
+}
+
+.colorRepr {
+  font-family: monospace;
+  font-size: 1.4em;
+}

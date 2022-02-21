@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>HSB Tester</title>
+    <link rel='stylesheet' href='hsbTester.css'></link>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <h1>HSB Tester: Guess the color</h1>
+    <p>A more natural way for us (humans) to think about color is Hue-Saturation-Brightness (HSB). Given a random color code, try to guess the color that it represents. First pick a color resolution (bpc) and generate a color. Then choose a hue from the color wheel (think about what are the dominant colors in the code). Then you'll be able to see the different saturations for that hue (remember what grey is?) and finally choose a brightness.</p>
+    <div id="controls">
+      <div class="control">
+        <span id="bpc">1</span> bit(s) per color: 1 <input id="bpcControl" type="range" min="1" max="8" value="1" onchange="bpcChange(event);"></input> 8 <button onclick="showRandomCode(event);">Generate Code</buton>
+      </div>
+      <div id="colorToGuess">
+        <div>
+          Binary representation of the mystery color:
+          <div id="bRepr" class="colorRepr"><span id="bRRepr">0</span><span id="bGRepr">0</span><span id="bBRepr">0</span></div>
+        </div>
+        <div title="NaN (not a number) means it can't be represented as a hexadecimal number">
+          Hexadecimal representation of the mystery color:
+          <div id="hRepr" class="colorRepr"><span id="hRRepr">N</span><span id="hGRepr">a</span><span id="hBRepr">N</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="hue">
+      <h3>Hue</h3>
+      <canvas id="hueChoices" width="512" height="512">
+        Sorry, this page requires HTML5 canvas support
+      </canvas>
+    </div>
+    <div id="saturation">
+      <h3>Saturation</h3>
+      <canvas id="saturationChoices" width="512" height="100">
+        Sorry, this page requires HTML5 canvas support
+      </canvas>
+    </div>
+    <div id="brightness">
+      <h3>Brightness</h3>
+      <canvas id="brightnessChoices" width="1000" height="100">
+        Sorry, this page requires HTML5 canvas support
+      </canvas>
+    </div>
+    <div>
+      <div id="chosenColor">
+        <h3>Chosen Color</h3>
+        <div id="colorYouChose"></div>
+      </div>
+      <div id="actualColor">
+        <h3>Actual Color</h3>
+        <div id="colorActual"></div>
+      </div>
+    </div>
+
+    <button id="checkGuess" onclick="checkColorGuess(event);" disabled>Check Guess</button>
+    <div id="guessResults">
+      <h2>HSB Tester Results</h2>
+      <p>For: <span id="resultsBPC"></span> BPC</p>
+      <table>
+        <tr><th>Color </th><th>Binary</th><th>Hex</th></tr>
+        <tr><td>Actual</td><td id="actualBRepr" class="colorRepr"><span id="resultsbRRepr">0</span><span id="resultsbGRepr">0</span><span id="resultsbBRepr">0</span></td><td id="actualHRepr" class="colorRepr"><span id="resultshRRepr">0</span><span id="resultshGRepr">0</span><span id="resultshBRepr">0</span></td></tr>
+        <tr><td>Chosen</td><td class="colorRepr"><span id="bRGuess"></span><span id="bGGuess"></span><span id="bBGuess"></span></td><td class="colorRepr"><span id="hRGuess"></span><span id="hGGuess"></span><span id="hBGuess"></span></td></tr>
+      </table>
+      <p>Percentage Off: <span id="guessPercentageOff"></span>%</p>
+      <p>Percentage Correct: <span id="guessPercentageCorrect"></span>%</p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="hsbTester.js"></script>
+  </body>
+</html>
