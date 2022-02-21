@@ -1,0 +1,873 @@
+<html>
+<head>
+  <link rel="stylesheet" href="JavaCheatSheet.css"></link> </head>
+<body>
+
+<header>Java Cheatsheet</header>
+
+<p>The Java syntax found here will be used <em>continually</em> throughout this course. It should be committed to memory. If you have to constantly be referring back to it, the assignments will take you twice as long to do and you will lose precious time. Even though this cheatsheet will always be available to you, it would be good to maintain your own version (written out) in your notes for easier access and to help you memorize the contents. <strong>Extra credit</strong> will be given for maintaining your own handwritten version.</p>
+
+<hr><em>[From Basic Commands]</em></hr>
+
+<section>
+<header>Define a runnable program</header>
+<code class="syntax"><span class="keyword">public</span> <span class="keyword">class</span> <span class="type">ProgramName</span> {
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="method">main</span>(<span class="type">String</span>[] args) {
+        // Code to run goes here
+    }
+}</code>
+<code class="example">public class GreeterProgram {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+}</code>
+<div>At this point you don't have to understand what all of this stuff means, but you should know that all of your code <i>must</i> go inside of the <b>main</b>.</div>
+</section>
+
+<section>
+<header>Call a <span class="method">method</span> on an object (assumes the object has already been created)</header>
+<code class="syntax"><var>objectName</var>.<span class="method">methodName</span>(<span class="value">required</span>, <span class="value">parameter</span>, <span class="value">values</span>);</code>
+<code class="example">karel.move();
+terry.goForward(10);</code>
+<div>The "required parameter values" must match those that are found in the documentation.</div>
+</section>
+
+<section>
+<header>Use any class from a package</header>
+<code class="syntax"><span class="keyword">import</span> packagename.*;</code>
+<code class="example">import turtlefx.*;</code>
+</section>
+
+<section>
+<header>Use a specific class from a package</header>
+<code class="syntax"><span class="keyword">import</span> packagename.<span class="type">ClassName</span>;</code>
+<code class="example">import karelthecarpeter.Carpeter;
+import turtlefx.World;</code>
+</section>
+
+<section>
+<header>Use static values <em>inside</em> a class</header>
+<code class="syntax"><span class="keyword">import static</span> packagename.<span class="type">ClassName</span>.*;</code>
+<code class="example">import static karelthecarpeter.Direction.*;
+import static javafx.scene.paint.Color.*;
+</code>
+<div>Allows you to use those values directly without needing to specify the package and / or the class:</div>
+<code class="syntax">// Instead of needing
+javafx.scene.paint.Color.RED
+// Or
+karelthecarpeter.Direction.NORTH
+</code>
+<code class="example">// You can instead use just
+RED
+// Or
+NORTH</code>
+<div>Note: final values (ones that can't change) are typically in all UPPERCASE</div>
+</section>
+
+<hr><em>[From the Variables lesson]</em></hr>
+
+<section>
+<header>Declare a <var>variable</var></header>
+<code class="syntax"><span class="type">VariableType</span> <var>variableName</var>;</code>
+<code class="example">int numOranges;</code>
+</section>
+
+<section>
+<header>Primitive Data <span class="type">Types</span></header>
+<table>
+  <tr><th><span class="type">Type</span></th><th>Description</th><th>Default <span class="value">Value</span></th><th>Example(s)</th><th>Operators</th></th>
+  <tr><td><span class="type">int</span></td><td>integers</td><td><pre>0</pre></td><td><pre>8, -3, 100000</pre></td><td><pre>+ - * / %</pre></td></tr>
+  <tr><td><span class="type">double</span></td><td>numbers with decimal points</td><td><pre>0.0</pre></td><td><pre>3.14159</pre></td><td><pre>+ - * /</pre></td></tr>
+  <tr><td><span class="type">boolean</span></td><td><span class="keyword">true</span> or <span class="keyword">false</span></td><td><span class="keyword">false</span></td><td><span class="keyword">true</span></td><td><pre>&amp;&amp; || ! </pre> </td></tr>
+  <tr><td><span class="type">String</span></td><td>sequence of characters</td><td><span class="keyword">null</span></td><td><pre>"hello", "3.14"</pre></td><td><pre>+</pre></td></tr>
+</table>
+</section>
+
+<section>
+<header>Naming rules</header>
+<ol>
+<li>Cannot be a reserved <span class="keyword">keyword</span></li>
+<li>Cannot <em>start</em> with a number</li>
+<li>No punctuation, delimeters, or special characters</li>
+<li>No spaces</li>
+<li>Can't already be a variable with that name</li>
+</ol>
+<div><em>Recommended</em> to use camel case</div>
+</section>
+
+<section>
+<header>Use Camel Case</header>
+<code class="syntax">capitalizeFirstLetterOfNewWords</code>
+<div>Use when appropriate: when the purpose of the variable can't be summarized in a single word</div>
+</section>
+
+<section>
+<header>Define a <var>variable</var> (assign a <span class="value">value</span>; assumes it's already been declared)</header>
+<code class="syntax"><var>variableName</var> = <span class="value">newValue</span>;</code>
+<code class="example">pi = 3.14;
+r = pi;
+circumference = 2 * Math.PI * r;
+oppositeSide = Math.sin(45) * h;
+</code>
+<div>
+  <span class="value">newValue</span> can be a literal, another variable (already defined), method call (that returns a value), or an expression
+</div>
+</section>
+
+<section>
+<header>Declare and define a <var>variable</var> simultaneously</header>
+<code class="syntax"><span class="type">VariableType</span> <var>variableName</var> = <span class="value">initialValue</span>;</code>
+<code class="example">double pi = 3.14;</code>
+</section>
+
+<div></div>
+<hr><em>[From the Static Methods lesson]</em></hr>
+
+<section>
+<header>Create a simple static method </header>
+<code class="syntax">public static <span class="type">void</span> <span class="method">methodName</span>(<span class="type">paramType</span> <span class="method">paramName</span>) {
+  // Code to run when the method is called
+}</code>
+<code class="example">public static void makeL(Turtle t) {
+    t.goForward(100);
+    t.turnLeft(90);
+    t.goForward(100);
+}
+</code>
+<div>Convention: make methods have an <em>action (verb)</em> name</div>
+</section>
+
+<section>
+<header>Call a static method (in the same class where it's defined)</header>
+<code class="syntax"><span class="method">methodName</span>(<span class='value'>paramValue</span>);</code>
+<code class="example">makeL(terry);</code>
+</section>
+
+<div></div>
+
+<section>
+<header>Call a static method in a different class</header>
+<code class="syntax">// Assuming the class has been imported
+<span class="placeholder">ClassName</span>.<span class="method">methodName</span>(required, parameter, values);</code>
+<code class="example">double tax = Store.calcTax(100);
+double distance = Math.sqrt(x * x + y * y);</code>
+</section>
+
+<section>
+<header>Comments</header>
+<code class="syntax">// Single line comment
+
+/*
+    Multi
+    line
+    comment
+*/
+
+/**
+ * &lt;h1&gt;JavaDoc&lt;/h1&gt; comments can contain HTML
+ * and should be placed immediately before a method
+ */</code>
+</section>
+    
+<div></div>
+<hr><em>[From the For Loops lesson]</em></hr>
+
+<section>
+<header>Execute code a specific number of times</header>
+<code class="syntax"><span class='keyword'>for</span> (<span class='placeholder'>indexVarInit</span>; <span class='placeholder'>runCondition</span>; <span class='placeholder'>incrementOrDecrement</span>) {
+    // Code to run multiple times
+}</code>
+<code class="example">// Prints out the numbers from 0 to 99
+for (int i = 0; i &lt; 100; i++) {
+    System.out.println(i);
+}</code>
+<div><span class='placeholder'>indexVarInit</span> tells you where to start</div>
+<div><span class='placeholder'>runCondition</span> tells you where to stop (or rather how long to keep going)</div>
+<div><span class='placeholder'>incrementOrDecrement</span> tells you how to get there</div>
+</section>
+
+<section>
+<header>Different ways to increment and decrement</header>
+<code class="syntax">// The following 3 lines are equivalent
+// They each decrease the variable by 1
+<var>variableName</var> = variableName + 1;
+<var>variableName</var> += 1;
+<var>variableName</var>++;
+
+// The following 3 lines are equivalent
+// The each decrease the value of the variable by 1
+<var>variableName</var> = variableName - 1;
+<var>variableName</var> -= 1;
+<var>variableName</var>--;</code>
+<code class="example">// This one can use other variables
+numApples = numApples + 3;
+// This one can use other increments
+numApples += 2;
+// This one can only increment by 1
+numApples++;
+
+numApples = numApples - 3;
+numApples -= 2;
+numApples--;
+</code>
+</section>
+
+<div></div>
+<hr><em>[From the Conditionals lesson]</em></hr>
+
+<section>
+<header>Conditionally execute code</header>
+<code class="syntax"><span class='keyword'>if</span> (<span class='value'>booleanExpression1</span>) {
+    // Code to run when booleanExpression1 is true
+} <span class='keyword'>else if</span> (<span class='value'>booleanExpression2<span>) {
+    // Code to run when booleanExpression1 is false
+    //   AND booleanExpression2 is true
+} <span class='keyword'>else</span> {
+    // Code to run when BOTH conditions are false
+}</code>
+<code class="example">if (age >= 20) {
+    System.out.println("You're old'");
+} else if (age > 13) {
+    System.out.println("You're a teenager");
+} else {
+    System.out.println("You're a little kid");
+}</code>
+<div>The <span class='keyword'>else</span> and the <span class='keyword'>else if</span> parts are optional but the <span class='keyword'>if</span> part is NOT optional</div>
+<div>Also note that the <span class='keyword'>else</span> does <em>NOT</em> have a condition. Its condition is implicitly the opposite of the if's. If you put a condition it will not compile.</div>
+</section>
+
+<section>
+<header>Create a boolean expression</header>
+<code class="syntax">// Any or combination of the following
+boolean value or boolean variable
+method that returns a boolean value
+comparison operation
+boolean operation</code>
+<code class="example">// Mirroring the left
+true
+karel.frontIsClear()
+age &gt; 10
+karel.frontIsClear() &amp;&amp; row > 10</code>
+<div>Comparison operators: &nbsp; &lt; &nbsp; &lt;= &nbsp; == &nbsp; != &nbsp; &gt;= &nbsp; &gt;</div>
+<div>Boolean operators: &nbsp; &amp;&amp; &nbsp; || &nbsp; !</div>
+<div>String methods: see <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/String.html">the docs</a> (especially equals and contains)</div>
+</section>
+
+<div></div>
+<hr><em>[From the While Loops lesson]</em></hr>
+
+<section>
+<header>Execute code as long as a condition is true</header>
+<code class="syntax"><span class='keyword'>while</span> (<span class='value'>loopCondition</span>) {
+    /* Code to run as long as the
+     * loop condition is true */
+}</code>
+<code class="example">// Move forward until a wall
+while (karel.frontIsClear()) {
+    karel.move();
+}</code>
+<div>Better to use this than a for loop with a break</div>
+</section>
+
+<section>
+<header>Prematurely end a loop</header>
+<code class="syntax"><span class='keyword'>break;</code>
+<code class="example">// Prints out the numbers from 15 to 99 until it gets to a multiple of 13
+for (int i = 15; i &lt; 100; i++) {
+    if (i % 13 == 0) {
+        break;
+    }
+    System.out.println(i);
+}</code>
+</section>
+
+<section>
+<header>Skip an iteration of a loop</header>
+<code class="syntax"><span class='keyword'>continue;</code>
+<code class="example">// Prints out the numbers from 15 to 99 except for multiple of 13
+for (int i = 15; i &lt; 100; i++) {
+    if (i % 13 == 0) {
+        continue;
+    }
+    System.out.println(i);
+}</code>
+</section>
+
+<div></div>
+<hr><em>[From the Method Return Values lesson]</em></hr>
+
+<section>
+<header>Create a static method</header>
+<code class="syntax">/**
+ * <span class="placeholder">Describe your methods in a Javadoc comment</span>
+ * @param <var>parameterName</var> <span class="placeholder">Describe this parameter</span>
+ * @return <span class="placeholder">Describe the return value</span>
+ */
+public static <span class="type">returnType</span> <span class="method">methodName</span>(<span class="type">parameterType</span> <var>parameterName</var>, ...) {
+  // Code to run when the method is called
+}</code>
+<code class="example">class Store {
+    /**
+     * Compute and return the sales tax for the given amount
+     * @param amount The amount for which tax is owed
+     * @return The amount of tax owed (not rounded)
+     */
+    public static double calcTax(double amount) {
+        return amount * 0.0625;
+    }
+}</code>
+</section>
+
+
+
+<div></div>
+<hr><em>[From the Exceptions lesson]</em></hr>
+
+<section>
+<header>Handle an exception</header>
+<code class="syntax"><span class='keyword'>try</span> {
+    // Code that could throw an exception
+} <span class='keyword'>catch</span> (<span class="type">ExceptionType</span> <var>exceptionName</var>) {
+    // Code to run when an exception occurs
+} <span class='keyword'>finally</span> {
+    // Code to run at the end whether
+    //   or not an exception occurs
+}</code>
+<code class="example">try {
+    doDangerousStuff();
+} catch (DangerousException de) {
+    System.out.println("Error!");
+} finally {
+    System.out.println("Goodbye!");
+}</code>
+<div><span class='keyword'>try</span> is required, but only need one either <span class='keyword'>catch</span> and <span class='keyword'>finally</span></div>
+</section>
+
+<section>
+<header>Pass an exception on (to whomever called this method)</header>
+<code class="syntax">public void myMethod() <span class='keyword'>throws</span> <span class="type">ExceptionType</span> {
+    if (<span class='value'>problemSituation == true</span>) {
+        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="type">ExceptionType</span>();
+    }
+}</code>
+<code class="example">public void doDangerousStuff() throws DangerousException {
+    if (! goodSituation) {
+        throw new DangerousException();
+    }
+}</code>
+</section>
+
+<section>
+    <header>Read data from a file</header>
+    <code class="syntax">import java.io.File;
+import java.util.Scanner;
+// ...        
+// inside a method (e.g. main)
+File f = new File(<span class='placeholder'>"somefilename.txt"</span>);
+Scanner s = null;
+try {
+    s = new Scanner(f);
+} catch (Exception e) {
+    System.out.println(<span class='placeholder'>"Error message..."</span>);
+    System.exit(-1);
+}
+while (s.hasNextLine()) {
+    String line = s.nextLine();
+    // do something with the data
+}</code>
+</section>
+  
+
+
+
+<div></div>
+<hr><em>[From the Instance Variables lesson]</em></hr>
+
+<section>
+<header>Define an instance variable</header>
+<div>Each object (AKA instance) of a particular type (created with <span class="keyword">new</span>) will maintain it's own value for each instance variable that you give to the class. Note that there's no <span class="keyword">static</span> keyword here. This is what makes it an instance variable.</div>
+<code class="syntax"><span class="placeholder">visibility</span> <span class="type">VariableType</span> <var>variableName</var> = <span class="value">defaultValue;</span></code>
+<code class="example">public class Employee {
+    private String myName = "Undefined";
+    private int myAge; // no default value
+}</code>
+<div>Instance variables are typically the first thing <em>directly</em> inside a class definition (ie. not inside a method)</div>
+<div>
+  <span class="placeholder">visibility</span> should almost always be <span class="keyword">private</span>
+</div>
+<div>It's good practice to give instance variables a default value but not necessary because they will often be given a value in the constructor...</div>
+</section>
+
+<section>
+<header>Define a <span class="method">constructor</span></header>
+<div><b>Note</b> that there's no return type here because a constructor always returns an object of this <span class="keyword">class</span> type. If you put a return type here (even void) Java will <b>not</b> recognize it as a constructor and you will be very confused.</div>
+<div><b>Note:</b> Until you make your own, all classes have a default constructor that takes no parameters. Once you create your own constructor the default one is no longer available.</div>
+<code class="syntax"><span class="keyword">public</span> <span class="type">TypeName</span>(<span class="type">pType</span> <var>pName</var>, <span class="type">pType</span> <var>pName</var>) {
+    // Code to run when creating
+    // an object of this <span class="type">type</span>
+}</code>
+<code class="example">public Employee(String name, int age) {
+  this.myName = name;
+  this.myAge = age;
+}</code>
+<div>
+  You will almost always want to save the parameters passed to a constructor in an instance variable. Use <span class="keyword">this</span> to disambiguate between parameters and instance variables with the same name. If the names don't clash you don't need to use <span class="keyword">this</span> but it's good practice to use it anyway.
+</div>
+</section>
+
+<section>
+<header>Call a <span class="method">constructor</span> to create an instance of an object</header>
+<code class="syntax"><span class="type">ObjectType</span> <span class="placeholder">variableName</span> = <span class="keyword">new</span> <span class="type">ObjectType</span>(required, parameter, values);</code>
+<code class="example">Employee emp1 = new Employee("Gene Harmon", 32);</code>
+<div>The required parameter values are defined by the constructor definition. The types of the parameters and the types of the values <em>must</em> match.</div>
+</section>
+
+
+
+<div></div>
+<hr><em>[From the Instance Methods lesson]</em></hr>
+
+<section>
+<header>Define an instance <span class="method">method</span></header>
+<div>Note that there's no <span class="keyword">static</span> keyword here. This is what makes it an instance method.</div>
+<code class="syntax"><span class="placeholder">visibility</span> <span class="type">returnType</span> <span class="method">methodName</span>(<span class="type">pType</span> <var>pName</var>) {
+    // Code to run when calling this <span class="method">method</span>
+}</code>
+<code class="example">public void getPaid(double money) {
+    this.earnings += money;
+    System.out.println("Woohoo! " + this.name + " got paid " + money + " bucks!");
+}</code>
+<div>
+  <span class="placeholder">visibility</span>: <span class="keyword">public</span>, <span class="keyword">private</span>, <span class="keyword">protected</span>, or omitted (package private)
+</div>
+<div>
+  returnType: <span class="keyword">void</span>, primitive data type, or object type
+</div>
+<div>
+  Use <span class="keyword">return</span> to send back a value (of type <span class="type">returnType</span>) to the place where this method was called.
+</div>
+</section>
+
+<section>
+<header>Call an instance <span class="method">method</span></header>
+<code class="syntax">objectVariable.methodName(required, parameter, values);</code>
+<code class="example">bob.getPaid(102.50);</code>
+</section>
+
+
+
+<div></div>
+<hr><em>[From the Inheritance lesson]</em></hr>
+
+<section>
+<header>Define an object <span class="type">type</span> based on another <span class="type">type</span></header>
+<code class="syntax"><span class="keyword">public</span> <span class="keyword">class</span> <span class="type">TypeName</span> <span class="keyword">extends</span> <span class="type">ParentType</span> {
+    /* constructors and any new methods and instance
+     * variables that will be added on top of the ones
+     * that are inherited from the parent class */
+}</code>
+<code class="example">public class MyCarpeter extends Carpeter {
+    public MyCarpeter(World w, int rugs) {
+        super(w, 2, 3, EAST, rugs);
+        super.move();
+    }
+}</code>
+<div>The <em>first</em> thing in the constructor of a derived (child) class <em>must</em> be a call to the <span class="keyword">super</span> (parent) constructor.</div>
+</section>
+
+<section>
+<header>Implicitly cast an object to a different type</header>
+<code class="syntax"><span class='type'>ParentType</span> <span class='placeholder'>variableName</span> = existingObject;</code>
+<code class="example">Employee e = new Employee();
+Person p = e;</code>
+</section>
+<section>
+    <header>Explicitly casting a value to different type</header>
+    <code class="syntax">(<span class="type">targetType</span>) someValue</code>
+    <code class="example">(int) 5.89</code>
+    <div>Note: casting from a less precise type to a more precise type (e.g. int to double) can happen implicitly (without an explicit cast) but going the other way around requires an explicit cast because some data will (at least potentially) be lost.</div>
+</section>
+<section>
+<header>Explicitly cast an object to a different <span class="type">type</span></header>
+<code class="syntax">(<span class="type">NewType</span>) <span class="value">objectReference</span></code>
+<code class="example">// The Employee class inherits from the Person class
+Person p = new Employee(); // valid implicit cast
+Employee e = (Employee) p; // explicit cast</code>
+<div>Upcasts are always valid and can be done without the explicit cast</div>
+<div>Downcasts can cause runtime errors (ClassCastException) and as such require the explicit cast</div>
+</section>
+<section>
+<header>Check the <span class="type">type</span> of an object</header>
+<code class="syntax">if (<span class="value">objectReference</span> instanceof <span class="type">SomeType</span>) { 
+    // Safe to cast to <span class="type">SomeType</span>
+} </span></code>
+<code class="example">// The Employee class inherits from the Person class
+Person p = new Employee();
+if (p instanceof Employee) {
+    // Safe to cast p to an Employee
+}</code>
+</section>
+        
+
+
+
+<div></div>
+<hr><em>[From the Override lesson]</em></hr>
+
+<section>
+<header>Override a <span class="method">method</span> that already exists in a <span class="type">ParentType</span></header>
+<code class="syntax"><span class="keyword">@Override</span>
+<span class="placeholder">visibility</span> <span class="type">returnType</span> <span class="method">methodName</span>(<span class="type">pType</span> <var>pName</var>) {
+    // New code to run when calling this <span class="method">method</span>
+}</code>
+<code class="example">public class MyCarpeter extends Carpeter {
+    @Override
+    public void move() {
+        super.move();
+        super.move();
+    }
+}</code>
+<div>
+  The method name, parameters and return type have to be identical to the original for it to be considered overridden.
+</div>
+<div>
+  NOTE: if you intend to call a parent class' overriden method you must use the <span class="keyword">super</span> prefix or you will get infinite recursion (AKA stack overflow crash)
+</div>
+<div>
+  The <span class="keyword">@Override</span> notation isn't strictly necessary but it's <em>very</em> good practice... ahem.
+</div>
+</section>
+
+<!-- Not really new syntax... -->
+<section>
+<header>Overload a <span class="method">method</span></header>
+<div>Overloading is the practice of providing multiple methods with the same name but with different parameters (number or type). Java will automatically choose to run the version of the method that corresponds to the parameters that are given.</div>
+<code class="example">public class Thing {
+    private int position = 0;
+    public void move() {
+      this.position++;
+    }
+    public void move(int distance) {
+      this.position += distance;
+    }
+}</code>
+<code class="example">public class Runner {
+    public static void main(String[] args) {
+        Thing t = new Thing();
+        // this runs the first move
+        t.move();
+        // this runs the second move
+        t.move(5)
+    }
+}</code>
+<div>Note: there isn't any new syntax here but this is an important concept you should know about</div>
+</section>
+
+<!--
+<section>
+<header>Send back a value from a method (inside a method)</header>
+<code class="syntax"><span class="keyword">return</span> <span class="value">value</span>;</code>
+<code class="example">return Math.PI * r * r;</code>
+<div>Note: the method will immediately exit and no other code inside the method will be executed.</div>
+</section>
+
+<section>
+<header>Allow access to information in an object instance</header>
+<div>
+  Since the instance variable is private, you need a public accessor method in the class
+</div>
+<code class="syntax"><span class="keyword">public</span> <span class="type">returnType</span> <span class="method">accessorMethodName</span>() {
+    <span class="keyword">return</span> <span class="keyword">this</span>.<var>instanceVariableName;
+}</code>
+<code class="example">// Only name is available because age is sensitive information
+public String getName() {
+    return this.myName;
+}</code>
+</section>
+
+<section>
+<header>Get information from an object instance</header>
+<code class="syntax"><span class="type">returnedType</span> <var>variableName</var> = <var>objectReference</var>.<span class="method">accessorMethodName</span>();</code>
+<code class="example">// Assuming you have an empoyee object called e
+String eName = e.getName();
+System.out.println("The employee's name is " + eName);</code>
+</section>
+
+<section>
+<header>Allow changing information in an object instance</header>
+<code class="syntax"><span class="keyword">public</span> <span class="keyword">void</span> <span class="method">methodName</span>(<span class="type">InstanceType</span> <var>pName</var>) {
+    <span class="keyword">this</span>.<var>instanceVariableName = <var>pName</var>;
+}</code>
+<code class="example">public void setName(String newName) {
+    this.name = newName;
+}</code>
+</section>
+-->
+
+<div></div>
+<hr><em>[From the Abstract classes and Interfaces lesson]</em></hr>
+
+<section>
+<header>Define a <em>non</em>-instantiable object <span class="type">type</span></header>
+<code class="syntax"><span class="keyword">public</span> <span class='keyword'>abstract</span> <span class="keyword">class</span> <span class="type">TypeName</span> {
+}</code>
+<code class="example">public abstract class Shape {
+}</code>
+<div>Abstract classes can contain defined methods and instance variables. They can also contain undefined (abstract) methods which must be impmlented by instantiable sub-types. Objects of an abstract type cannot be created (with the new operator).</div>
+</section>
+
+<section>
+<header>Define an abstract <span class="method">method</span> (inside an abstract class)</header>
+<code class="syntax"><span class="placeholder">visibility</span> <span class='keyword'>abstract</span> <span class="type">returnType</span> <span class="method">methodName</span>(<span class="type">pType</span> <var>pName</var>);</code>
+<code class="example">/** (Inside the abstract Shape class)
+* Different types of shapes calculate their area differently
+*   so it can't be defined in the generic shape class
+*/
+public abstract double calcArea();</code>
+<div>Abstract methods can't be defined (no method body). These methods must be defined in an instantiable sub-type.</div>
+</section>
+
+<section>
+<header>Define an interface</header>
+<code class="syntax"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="type">InterfaceName</span> {
+    // Declare (implicitly public)
+    //   methods but canNOT define them
+}</code>
+<code class="example">public interface Resizeable {
+    // public not needed (has to be public)
+    void setSize(int size);
+    void increaseSize(int increment);
+    void decreaseSize(int decrement);
+}</code>
+<div>The name of an interface is usually an adjective that describes an ability or set of abilities</div>
+</section>
+
+<section>
+<header>Implement an interface</header>
+<code class="syntax"><span class="keyword">public</span> <span class="keyword">class</span> <span class="type">ClassName</span> <span class="keyword">implements</span> <span class="type">Interface1Name</span>, <span class="type">Interface2Name</span>... {
+    // All methods from the interface(s) must be implemented
+}</code>
+<code class="example">public class Square implements Resizeable {
+    public void setSize(int size) {
+        this.width = size;
+    }
+    public void increaseSize(int increment) {
+        this.width += increment;
+    }
+    public void decreaseSize(int decrement) {
+        this.width -= decrement;
+    }
+}</code>
+<div>A class can inherit from only one other class but you can implement as many interfaces as you desire.</div>
+</section>
+
+
+
+<div></div>
+<hr><em>[From the Array Basics lesson]</em></hr>
+
+<section>
+<header>Declare a variable to refer to an array</header>
+<code class="syntax"><span class="type">ContentType</span>[] <var>arrayName</var>;</code>
+<code class="example">int[] nums;</code>
+<div><span class="type">ContentType</span> can be a primitive data type or a <em>type of Object</em></div>
+</section>
+
+<section>
+<header>Create an array literal</header>
+<div>Must be assigned to a <em>new</em> array variable as in the example. You cannot use an array literal to reassign to an existing variable.</div>
+<code class="syntax">{<span class="placeholder">value0</span>, <span class="placeholder">value1</span>, <span class="placeholder">value2</span>, <span class="placeholder">etc</span>}</code>
+<code class="example">int[] primes = {1, 3, 5, 7, 11, 13};
+// The following line will fail
+primes = {1, 3, 5, 7, 11, 13, 17};
+</code>
+</section>
+
+<section>
+<header>Get the size of an array</header>
+<code class="syntax"><var>arrayVariable</var>.length</code>
+<code class="example">primes.length</code>
+<div>By itself, this doesn't do anything. It's just a value that you can use in another statement.</div>
+</section>
+
+<section>
+<header>Create an "empty" array (with default values)</header>
+<div>Usually assigned to a variable as in the example</div>
+<code class="syntax"><span class="keyword">new</span> <span class="type">ContentType</span>[<span class="placeholder">size</span>]</code>
+<code class="example">int[] nums = new int[100];</code>
+</section>
+
+<section>
+<header>Get the value of an element in an array</header>
+<div>By itself, this doesn't do anything. It's just a value that you can use in another statement.</div>
+<code class="syntax"><var>arrayName</var>[<span class="placeholder">index</span>]</code>
+<code class="example">nums[0] // First value
+nums[nums.length - 1] // Last value</code>
+<div>Note: indecies are zero-based</div>
+<div>Note: if the index used is bigger than the size of the array, you will get an ArrayIndexOutOfBoundsException</div>
+</section>
+
+<section>
+<header>Set the value of an element in an array</header>
+<code class="syntax"><var>arrayName</var>[<span class="placeholder">index</span>] = <span class="placeholder">newValue</span>;</code>
+<code class="example">nums[3] = 10;</code>
+<div>Note: if the index used is bigger than the size of the array, you will get an ArrayIndexOutOfBoundsException</div>
+</section>
+    
+
+
+
+<div></div>
+<hr><em>[From the 2D Arrays lesson]</em></hr>
+
+<section>
+<header>Create a 2-Dimensional array</header>
+<div>This assumes row-dominant numbering which is the most common</div>
+<code class="syntax"><span class="type">ContentType</span>[][] <var>arrayName</var> = <span class="keyword">new</span> <span class="type">ContentType</span>[<span class="placeholder">numRows</span>][<span class="placeholder">numColumns</span>];</code>
+<code class="example">int[][] matrix = new int[100][50];</code>
+</section>
+
+<section>
+<header>Create a 2D array literal</header>
+<div>Line breaks and spaces aren't necessary but are useful to better visualize it. The syntax really only allows you to visualize it in row-dominant orientation.</div>
+<code class="syntax">{
+    {<span class="placeholder">r0c0</span>, <span class="placeholder">r0c1</span>, <span class="placeholder">r0c2</span>, <span class="placeholder">etc</span>},
+    {<span class="placeholder">r1c0</span>, <span class="placeholder">r1c1</span>, <span class="placeholder">r1c2</span>, <span class="placeholder">etc</span>},
+    {<span class="placeholder">r2c0</span>, <span class="placeholder">r2c1</span>, <span class="placeholder">r2c2</span>, <span class="placeholder">etc</span>}
+}</code>
+<code class="example">int[][] multiples = {
+    {1, 2, 3,  4,  5,  6},
+    {2, 4, 6,  8, 10, 12},
+    {3, 6, 9, 12, 15, 18},
+};
+</code>
+</section>
+
+<section>
+<header>Refer to values in a 2D array</header>
+<div>This assumes row-dominant numbering which is the most common</div>
+<code class="syntax"><var>arrayName</var>[<span class="placeholder">rowIndex</span>][<span class="placeholder">columnIndex</span>]</code>
+<code class="example">matrix[10][5]</code>
+<div>Can be used to get a value from the array or set a value in an array</div>
+</section>
+
+<section>
+<header>Get the dimensions of a 2D array</header>
+<div>This assumes row-dominant numbering which is the most common</div>
+<code class="syntax"><var>arrayName</var>.length // num rows
+<var>arrayName</var>[0].length // num columns</code>
+<code class="example">matrix.length // num rows
+matrix[0].length // num columns</code>
+<div>Using the first row to determine how wide the array is assumes that the array is not jagged, but this is normally the case.</div>
+</section>
+    
+<div></div>
+<hr><em>[Testing Notes (FYI only: not extra credit)]</em></hr>
+
+<section>
+<header>Make an assertion test</header>
+<code class="syntax">assert <span class='placeholder'>somethingThatShouldBeTrue</span> : <span class='placeholder'>extraInfoToPrintWhenItsNot</span>;</code>
+<code class="example">assert list.size() == 5 : list.toString();</code>
+</section>
+
+<section>
+<header>Write unit tests</header>
+<code class="syntax">import org.junit.*;
+
+public class TesterClass {
+    // optional: put any instance variables here
+
+    // This method is optional
+    <span class='keyword'>@Before</span>
+    public void setup() {
+        // common code to setup for each tests
+    }
+
+    <span class='keyword'>@Test</span>
+    public void <span class='placeholder'>testName</span>() {
+        // use assertions to test
+        <span class='keyword'>assert</span> something == somethingElse: "They're not equal";
+    }
+
+    // This method is optional
+    <span class='keyword'>@After</span>
+    public void cleanup() {
+        // code to cleanup after each test
+    }
+}</code>
+<code class="example">import org.junit.*;
+
+public class TimeRunner {
+    private Time t1;
+
+    @Before
+    public void createTimes() {
+        t1 = new Time(2, 37, 15);
+    }
+
+    @Test
+    public void testNormalHour() {
+        assert t1.getHour() == 2: "Bad hour";
+    }
+
+    @Test
+    public void testNormalMinute() {
+        assert t1.getMinute() == 37: "Bad minute";
+    }
+
+    @Test
+    public void testNormalSecond() {
+        assert t1.getSecond() == 15: "Bad second";
+    }
+}</code>
+</section>
+  
+<div></div>
+<hr><em>[From the Java Standard Collections lesson]</em></hr>
+
+<section>
+<header>Create collections with different types of contents using generics</header>
+<code class="syntax"><span class="placeholder">Interface</span>&lt;<span class="type">ContentType</span>&gt; <var>collectionName</var> = <span class="keyword">new</span> <span class="type">CollectionType</span>&lt;<span class="type">ContentType</span>&gt;();</code>
+<code class="example">List&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();</code>
+<div>All the different available collections can be found in <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">java.util</a> (see the set of "implementing classes")</div>
+<div>You can use the <span class="type">CollectionType</span> on both sides but using the generic <span class="placeholder">Interface</span> allows you to easily swap in a different <span class="type">CollectionType</span> that implements that same <span class="placeholder">Interface</span>.</div>
+<div>Note: <span class="type">ContentType</span> CANNOT be a primitive data type (boolean, int, double) but there are class equivalents for each of them (Boolean, Integer, Double) precisely for this purpose.</div>
+</section>
+    
+<div></div>
+<hr><em>[From the for-each loops lesson]</em></hr>
+
+<section>
+<header>Working with iterators</header>
+<div>This is using Java Generics</div>
+<code class="syntax"><span class="type">Iterator&lt;Type&gt;</span> <var>iteratorName</var> = iteratorMethod();
+<span class='keyword'>while</span> (iteratorName.hasNext()) {
+    <span class="type">Type</span> <var>varName</var> = iteratorName.next();
+    // do something with varName...
+}
+</code>
+<code class="example">Iterator<Integer> iter = listOfNums.iterator();
+while (iter.hasNext()) {
+    Integer i = iter.next();
+    System.out.println(i);
+}</code>
+</section>
+
+<section>
+<header>for-each loop</header>
+<div>Go through the contents of a collection</div>
+<code class="syntax">for (<span class="type">ContentType</span> <var>variableName</var> : <var>collectionReference</var>) {
+  // do something with each of the items in the collection
+  // anywhere you use <var>variableName</var> here it will refer
+  //   to the <em>current</em> value in the collection
+}</code>
+<code class="example">Integer[] numbers = {1, 2, 3, 4, 5, ...}
+for (Integer num : numbers) {
+  System.out.print(num * num + ", ");
+}</code>
+<div>The collection can be anything that implements the <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html">Iterable</a> interface which includes arrays and all the Java standard collections (among other things)</div>
+</section>    
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+</body>
+</html>

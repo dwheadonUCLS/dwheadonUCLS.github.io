@@ -1,0 +1,77 @@
+body>header {
+  font-size: 2em;
+}
+
+section {
+}
+
+section>header {
+  padding-top: 1em;
+  font-size: 1.5em;
+  clear: both;
+}
+
+code {
+  white-space: pre;
+  background-color: #EEEEFF;
+  float: left;
+  padding: 0.5em;
+  border: 1px solid black;
+}
+
+code.example {
+  background-color: #EEEEEE;
+  margin-left: 1em;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tr {
+  text-align: left;
+}
+
+tr:nth-child(odd) {
+  background-color: #EEEEFF;
+}
+
+th, td {
+  padding: 0 0.5em;
+  border: 1px solid #BBD;
+}
+
+var {
+  color: #009999;
+}
+
+span.placeholder {
+  color: #009900;
+  font-family: monospace;
+}
+
+span.method {
+  color: #990099;
+  font-style: italic;
+}
+
+span.type {
+  color: #990000;
+}
+
+span.keyword {
+  color: #DD8800;
+  font-family: monospace;
+}
+
+span.value {
+  font-style: italic;
+}
+
+div {
+  clear: both;
+}
+
+ol {
+  margin-bottom: 0;
+}
