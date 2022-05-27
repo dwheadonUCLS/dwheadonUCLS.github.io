@@ -17,7 +17,6 @@
 		margin: 5px;
 	}
 	#output{
-		
 		float: left;
 		padding: 5px;
 		margin: 5px;
@@ -28,7 +27,7 @@
 	}
 	#compressedPoem{
 		width: auto;
-		height: 200px;
+		height: 275px;
 		padding: 10px;
 		border: solid 1px #DDDDDD;
 		font-size: 14pt;
@@ -64,40 +63,25 @@
 		
 	}
 	#dictionary{
-		float: left;
+		float: right;
 		width: 400px;
 		height: 350px;
 		border: none;
 		font-size: 12pt;
 		line-height: 22px;
 	}
-p, ul, li{
-	margin: 1px;
-	width: 600px;
-}
-header h1 h2{
-	margin: 0px;
-}
-h2{
-	margin: 0px;
-	font-family: arial;
-}
-h1{
-	margin: 0px;
-	font-family: arial;
-}	
 	
-footer{
-	font-size: 11px;
-	width: 500px;
-	margin: auto;
-	border: none;
-	padding: 2px 50px;
-	background-color: #660000;
-	color: #EEEEEE;
-	clear: both;
-	
-}
+	footer{
+		font-size: 11px;
+		width: 500px;
+		margin: auto;
+		border: none;
+		padding: 2px 50px;
+		background-color: #660000;
+		color: #EEEEEE;
+		clear: both;
+		
+	}
 
 </style>
 <script type="text/javascript">
@@ -152,10 +136,11 @@ function calculateData(){
 	var compression = (1-(total/poemsList[selectedPoem].length))*10000;
 	compression = Math.round(compression);
 	compression /= 100;
-	document.getElementById("data").innerHTML= "      poem size: "+poemSize+" bytes\n";
-	document.getElementById("data").innerHTML+="dictionary size: "+dictSize+" bytes\n";
-	document.getElementById("data").innerHTML+="          total: "+total+" bytes\n";
-	document.getElementById("data").innerHTML+="    compression: "+compression+"%\n";
+	document.getElementById("data").innerHTML= "       original size: "+poemsList[selectedPoem].length+" bytes\n";
+	document.getElementById("data").innerHTML+="compressed poem size: "+poemSize+" bytes\n";
+	document.getElementById("data").innerHTML+="     dictionary size: "+dictSize+" bytes\n";
+	document.getElementById("data").innerHTML+="               total: "+total+" bytes\n";
+	document.getElementById("data").innerHTML+="         compression: "+compression+"%\n";
 }
 
 //recursively construct a self-referencing entry
@@ -216,7 +201,6 @@ function compress(){
 		<h1>Introduction to Computer Science</h1>
 		<h2>Text Compression</h2>
 	</header>
-	<br/>
 	<p><b>Directions:</b></p>
 	<ul>
 		<li>Look at the poem for patterns (repeated words or phrases) in the text. Enter the patterns you see into the dictionary on the right.</li>
@@ -224,18 +208,17 @@ function compress(){
 		<li>At the bottom you'll see how much the compression you've achieved.</li>
 		<li>NOTE: the dictionary only supports backwards self-referencing).</li>
 	</ul>
-		<br/>Choose a poem:<select id="poemsList" onChange="init()"></select>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   NAME: <input type=text width=20><br/>
-
-		<div id="output">
-			Compressed:<br>
-			<div id="compressedPoem"></div>
-			<div id="data">asdfas</div>
-		</div>
-		<div id="input">
-			Dictionary:<br/>
-			<div id="dictEntries"></div>
-			<textArea id="dictionary" onkeyup="compress()"></textarea>
-   		</div>
+	<p>Choose a poem:<select id="poemsList" onChange="init()"></select></p>
+	<div id="output">
+		Compressed:<br>
+		<div id="compressedPoem"></div>
+		<div id="data">asdfas</div>
+	</div>
+	<div id="input">
+		Dictionary:<br/>
+		<div id="dictEntries"></div>
+		<textArea id="dictionary" onkeyup="compress()"></textarea>
+	</div>
 		
     <!--
 	<footer id="footer">
