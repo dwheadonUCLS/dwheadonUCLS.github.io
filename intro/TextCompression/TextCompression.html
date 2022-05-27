@@ -51,7 +51,7 @@
 		width: auto;
 		text-align: right;
 		padding: 4px;
-		font-size: 14pt;
+		font-size: 20pt;
 		margin-top: 0px;
 		margin-bottom: 0px;
 		white-space: pre-wrap;
@@ -81,12 +81,10 @@ header h1 h2{
 h2{
 	margin: 0px;
 	font-family: arial;
-	font-size: 12px;
 }
 h1{
 	margin: 0px;
 	font-family: arial;
-	font-size: 16px;
 }	
 	
 footer{
@@ -213,16 +211,16 @@ function compress(){
 
 	<header>
 		<h1>Introduction to Computer Science</h1>
-		<h1>Text Compression</h1>
+		<h2>Text Compression</h2>
 	</header>
 	<br/>
 	<p><b>Directions:</b></p>
-	<p>
-		&middot; Look at the poem for patterns (repeated words or phrases) in the text. Enter the patterns you see into the dictionary on the right.<br/>
-		&middot; As you type entries into the dictionary, the symbol for the entry is inserted into the poem in place of the pattern.<br/>
-		&middot; At the bottom you'll see how much the compression you've achieved.<br/>
-		&middot; (NOTE: the dictionary only supports backwards self-referencing).<br/>
-	</p>
+	<ul>
+		<li>Look at the poem for patterns (repeated words or phrases) in the text. Enter the patterns you see into the dictionary on the right.</li>
+		<li>As you type entries into the dictionary, the symbol for the entry is inserted into the poem in place of the pattern.</li>
+		<li>At the bottom you'll see how much the compression you've achieved.</li>
+		<li>NOTE: the dictionary only supports backwards self-referencing).</li>
+	</ul>
 		<br/>Choose a poem:<select id="poemsList" onChange="init()"></select>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   NAME: <input type=text width=20><br/>
 
 		<div id="output">
@@ -236,10 +234,10 @@ function compress(){
 			<textArea id="dictionary" onkeyup="compress()"></textarea>
    		</div>
 		
-
+    <!--
 	<footer id="footer">
 		Introduction to Computer Science &middot; University of Chicago Laboratory Schools &middot; &copy; Baker Franke 2012 
 	</footer>
-
+    -->
 </body>
 </html>
