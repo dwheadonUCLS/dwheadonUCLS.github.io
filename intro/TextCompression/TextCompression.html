@@ -199,7 +199,7 @@ function compress(){
 			// DJW: Doing case insensitive is wrong and gets the students confused because they know that A and a are different
 			//poemDisplay = poemDisplay.replace(new RegExp(escapeRegExp(strToLookFor),"gi"), "<mark>"+dictEntries[i]+"</mark>");
 			poemDisplay = poemDisplay.replace(new RegExp(escapeRegExp(strToLookFor),"g"), "<mark>"+dictEntries[i]+"</mark>");
-			poemCalc = poemCalc.replace(new RegExp(strToLookFor,"gi"), "#");
+			poemCalc = poemCalc.replace(new RegExp(strToLookFor,"g"), "#");
 		}
 	}
 	document.getElementById("compressedPoem").innerHTML=poemDisplay;
