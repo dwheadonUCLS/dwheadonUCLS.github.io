@@ -4,24 +4,24 @@
 <style>
 	body{
 		font-family: Arial;
-		width: 650px;
+		/*width: 650px;*/
 	}
 		
 	#input{
-		width: auto;
+		/*width: auto;*/
 		float: left;
 		height: 400px;
 		background-color: #EEEEEE;
 		border: solid 1px;
 		padding: 5px;
-		margin: 2px;
+		margin: 5px;
 	}
 	#output{
 		
 		float: left;
 		padding: 5px;
 		margin: 5px;
-		width: 350px;
+		width: 400px;
 		background-color: #EEEEEE;
 		border: solid 1px;
 
@@ -51,7 +51,7 @@
 		width: auto;
 		text-align: right;
 		padding: 4px;
-		font-size: 12pt;
+		font-size: 14pt;
 		margin-top: 0px;
 		margin-bottom: 0px;
 		white-space: pre-wrap;
@@ -60,14 +60,16 @@
 		background-color: #FFFF99;
 		font-family: monospace;
 		font-weight: bold;
+		line-height: 22px;
 		
 	}
 	#dictionary{
 		float: left;
-		width: 200px;
+		width: 400px;
 		height: 350px;
 		border: none;
-		font-size: 14pt;
+		font-size: 12pt;
+		line-height: 22px;
 	}
 p, ul, li{
 	margin: 1px;
@@ -218,7 +220,6 @@ function compress(){
 	<p>
 		&middot; Look at the poem for patterns (repeated words or phrases) in the text. Enter the patterns you see into the dictionary on the right.<br/>
 		&middot; As you type entries into the dictionary, the symbol for the entry is inserted into the poem in place of the pattern.<br/>
-		&middot; The dictionary is not case sensitive. Use _ for spaces.<br/>
 		&middot; At the bottom you'll see how much the compression you've achieved.<br/>
 		&middot; (NOTE: the dictionary only supports backwards self-referencing).<br/>
 	</p>
