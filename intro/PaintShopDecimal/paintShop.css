@@ -1,0 +1,62 @@
+p#promptBase {
+  display: none;
+}
+
+span.diff {
+  width: 3em;
+  height: 20px;
+  background-color: #ffa;
+  position: absolute;
+  left: 2.8em;
+  bottom: 0.65em;
+  display: none;
+}
+
+table {
+  background-color: #DDF;
+  border-collapse: collapse;
+  display: none;
+  margin-top: 1em;
+}
+
+td, th {
+  border: 1px solid #AAF;
+  /* height: 1.5em; */
+}
+
+td:last-child {
+  position: relative;
+}
+
+input {
+  font-family: monospace;
+  text-align: right;
+}
+
+table input {
+  text-align: center;
+}
+
+input[disabled] {
+  background-color: #DDD;
+}
+
+/* binary */
+tr>td:nth-child(1)>input, tr>td:nth-child(2)>input, tr>td:nth-child(3)>input {
+  width: 6em;
+}
+
+/* hex */
+tr>td:nth-child(4)>input, tr>td:nth-child(5)>input, tr>td:nth-child(6)>input {
+  width: 2em;
+}
+
+/* dec */
+tr>td:nth-child(7)>input, tr>td:nth-child(8)>input, tr>td:nth-child(9)>input {
+  width: 3em;
+}
+
+/* base separators */
+thead>tr:nth-child(1)>th:not(:last-child), thead>tr:nth-child(2)>th:nth-child(3), tbody>tr>td:nth-child(3), thead>tr:nth-child(2)>th:nth-child(6), tbody>tr>td:nth-child(6), thead>tr:nth-child(2)>th:nth-child(9), tbody>tr>td:nth-child(9) {
+  border-right: 2px solid black;
+}
