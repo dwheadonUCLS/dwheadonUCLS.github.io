@@ -164,9 +164,9 @@ function updateDecColor(redInput) {
 
   if (redInput.parentElement.parentElement.parentElement.firstElementChild != redInput.parentElement.parentElement) {
     // it's not the first row
-    var prevR = redInput.parentElement.parentElement.previousElementSibling.children[6].firstElementChild.value;
-    var prevG = redInput.parentElement.parentElement.previousElementSibling.children[7].firstElementChild.value;
-    var prevB = redInput.parentElement.parentElement.previousElementSibling.children[8].firstElementChild.value;
+    var prevR = redInput.parentElement.parentElement.previousElementSibling.children[0].firstElementChild.value;
+    var prevG = redInput.parentElement.parentElement.previousElementSibling.children[1].firstElementChild.value;
+    var prevB = redInput.parentElement.parentElement.previousElementSibling.children[2].firstElementChild.value;
     var colorDiff = redInput.parentElement.parentElement.lastElementChild.firstElementChild;
     colorDiff.innerHTML = "\&gt;" + (Math.abs(r-parseInt(prevR))+Math.abs(g-parseInt(prevG))+Math.abs(b-parseInt(prevB)));
     colorDiff.style.display = "inline";
