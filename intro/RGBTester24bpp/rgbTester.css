@@ -1,0 +1,98 @@
+p {
+  max-width: 600px;
+  margin: 0;
+}
+
+table {
+  margin: 10px 0 10px 0;
+  text-align: right;
+}
+
+th, td {
+  padding: 0 0.5em;
+}
+
+#color {
+  font-family: monospace;
+  font-size: 14pt;
+  margin-bottom: 0.5em;
+  margin-left: 50px;
+}
+
+#controls {
+  padding: 10px;
+}
+
+.control {
+  margin: 10px 0 10px 0;
+}
+
+div.control {
+  white-space: nowrap;
+}
+
+.slider {
+  width: 300px;
+}
+
+i {
+  cursor: default;
+}
+
+#guessColorR, #actualColorR {
+  color: red;
+}
+#guessColorG, #actualColorG {
+  color: green;
+}
+#guessColorB, #actualColorB {
+  color: blue;
+}
+
+#colorToGuess, #colorYouGuessed {
+  width: 200px;
+  height: 200px;
+}
+
+.color p {
+  margin-bottom: 0;
+}
+
+.color {
+  display: inline-block;
+}
+
+
+.correct {
+  background-color: #FF8;
+}
+
+#checkGuess {
+  margin: 0 0 10px 0;
+}
+
+#guessCodeResults, #guessCodeControls, #yourColor {
+  display: none;
+}
+
+#codeGuess {
+  font-family: Courier;
+}
+
+h2 {
+  margin: 0
+}
+
+h3 {
+  margin-bottom: 0;
+}
+
+input[type="range"] {
+  position: relative;
+  top: 0.1em;
+}
+
+.colorRepr {
+  font-family: monospace;
+  font-size: 1.4em;
+}

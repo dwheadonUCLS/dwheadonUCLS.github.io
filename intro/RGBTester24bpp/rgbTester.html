@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>RGB Tester</title>
+    <link rel='stylesheet' href='rgbTester.css'></link>
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <h1>RGB Tester: Guess the code</h1>
+    <p>RGB is the way a computer "thinks" about colors. Given a random color, try to guess the code that represents it. First pick a color resolution (bpc) and generate a color. Then choose the code that you think best represents that color.</p>
+    <div id="controls">
+      <div class="control">
+        <button onclick="showRandomColor(event);">Generate</buton>
+      </div>
+    </div>
+    <div id="guessCodeControls">
+      <div class="color"><h3>Color to guess</h3><div id="colorToGuess"></div></div>
+      <div id="yourColor" class="color"><h3>Color you guessed</h3><div id="colorYouGuessed"></div></div>
+      <div class="control">
+        <p>Choose values for this color:
+          <input id="codeGuessR" type="number" size="3" maxLength="3" min="0" max="255" disabled></input>
+          <input id="codeGuessG" type="number" size="3" maxLength="3" min="0" max="255" disabled></input>
+          <input id="codeGuessB" type="number" size="3" maxLength="3" min="0" max="255" disabled></input>
+        </p>
+      </div>
+      <button id="checkGuess" onclick="checkCodeGuess(event);" disabled>Check Guess</button>
+    </div>
+    <p id="guessCodeError"></p>
+    <div id="guessCodeResults">
+      <h2>RGB Tester Results</h2>
+      <table>
+        <tr><th>Color</th><th>Red</th><th>Green</th><th>Blue</th></tr>
+        <tr><td>Actual</td><td id="actualColorR"></td><td id="actualColorG"></td><td id="actualColorB"></td>
+        </tr>
+        <tr><td>Guess</td><td id="guessColorR"></td><td id="guessColorG"></td><td id="guessColorB"></td>
+        </tr>
+      </table>
+      <p>Percentage Off: <span id="guessCodePercentageOff"></span>%</p>
+      <p>Percentage Correct: <span id="guessCodePercentageCorrect"></span>%</p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script src="rgbTester.js"></script>
+  </body>
+</html>

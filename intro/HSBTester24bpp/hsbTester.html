@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>HSB Tester</title>
+    <link rel='stylesheet' href='hsbTester.css'></link>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <h1>HSB Tester: Guess the color</h1>
+    <p>A more natural way for us (humans) to think about color is Hue-Saturation-Brightness (HSB). Given random color values, try to guess the actual color that it represents. First generate a color. Then choose a hue from the color wheel (think about what are the dominant color(s) in the code). Then you'll be able to see the different saturations for that hue (remember what grey is?) and finally choose a brightness.</p>
+    <div id="controls">
+      <div class="control">
+        <button onclick="showRandomCode(event);">Generate Color Values</buton>
+      </div>
+      <div id="colorToGuess">
+        <div>
+          Mystery color values:
+          <div id="bRepr" class="colorRepr"><span id="RRepr">0</span>, <span id="GRepr">0</span>, <span id="BRepr">0</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="hue">
+      <h3>Hue</h3>
+      <canvas id="hueChoices" width="512" height="512">
+        Sorry, this page requires HTML5 canvas support
+      </canvas>
+    </div>
+    <div id="saturation">
+      <h3>Saturation</h3>
+      <canvas id="saturationChoices" width="512" height="100">
+        Sorry, this page requires HTML5 canvas support
+      </canvas>
+    </div>
+    <div id="brightness">
+      <h3>Brightness</h3>
+      <canvas id="brightnessChoices" width="1000" height="100">
+        Sorry, this page requires HTML5 canvas support
+      </canvas>
+    </div>
+    <div>
+      <div id="chosenColor">
+        <h3>Chosen Color</h3>
+        <div id="colorYouChose"></div>
+      </div>
+      <div id="actualColor">
+        <h3>Actual Color</h3>
+        <div id="colorActual"></div>
+      </div>
+    </div>
+
+    <button id="checkGuess" onclick="checkColorGuess(event);" disabled>Check Guess</button>
+    <div id="guessResults">
+      <h2>HSB Tester Results</h2>
+      <table>
+        <tr><th>Color </th><th>Red</th><th>Green</th><th>Blue</th></tr>
+        <tr><td>Actual</td><td id="actualR" class="colorRepr"><span id="RRepr"></span></td></td><td id="actualG" class="colorRepr"><span id="GRepr"></span></td></td><td id="actualB" class="colorRepr"><span id="BRepr"></span></td></td></tr>
+        <tr><td>Chosen</td><td class="colorRepr"><span id="RGuess"></span></td><td class="colorRepr"><span id="GGuess"></span></td><td class="colorRepr"><span id="BGuess"></span></td></tr>
+      </table>
+      <p>Percentage Off: <span id="guessPercentageOff"></span>%</p>
+      <p>Percentage Correct: <span id="guessPercentageCorrect"></span>%</p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="hsbTester.js"></script>
+  </body>
+</html>

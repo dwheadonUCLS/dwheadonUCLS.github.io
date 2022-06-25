@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>RGB Explorer</title>
+    <link rel='stylesheet' href='rgbExplorer.css'></link>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <h1>RGB Explorer</h1>
+    <p>This tool allows you play with the RGB color scheme, combining red, green, and blue light to make different colors. The sliders control the red, green, and blue lights. The color in the middle shows the result of adding the red (left), green (bottom), and blue (right) lights together. It's easiest to change the amounts by clicking on the slider and then using the arrow keys to adjust the values.</p>
+    <p>Setting one of the "flashlights" and then locking it in place will allow you to see the spectrum that's available when that color stays constant. Use the arrow keys or simply click to move around on the spectrum. Use the chains to link two colors together. Any change to one of them makes the other change as well.</p>
+    <table>
+      <tr>
+        <td>
+          <div id="controls">
+            <div class="control">R: <span id="redVal">0</span> <input id="redControl" type="range" min="0" max="255" value="0" onchange="colorChange(event);"></input><i id="lockR" style="font-size:24px" class="fa" onclick="lockUnlock(event);">&#xf09c;</i></div>
+            <i id="linkRG" title="Chaining only works when you use the sliders" style="font-size:24px" class="fa" onclick="linkUnlink(event);">&#xf127;</i> (links red to green)
+            <div class="control">G: <span id="greenVal">0</span> <input id="greenControl" type="range" min="0" max="255" value="0" onchange="colorChange(event);"></input><i id="lockG" style="font-size:24px" class="fa" onclick="lockUnlock(event);">&#xf09c;</i></div>
+            <i id="linkGB" title="Chaining only works when you use the sliders" style="font-size:24px" class="fa" onclick="linkUnlink(event);">&#xf127;</i> (links green to blue)
+            <div class="control">B: <span id="blueVal">0</span> <input id="blueControl" type="range" min="0" max="255" value="0" onchange="colorChange(event);"></input><i id="lockB" style="font-size:24px" class="fa" onclick="lockUnlock(event);">&#xf09c;</i></div>
+            <i id="linkBR" title="Chaining only works when you use the sliders" style="font-size:24px" class="fa" onclick="linkUnlink(event);">&#xf127;</i> (links blue to red)
+          </div>
+        </td>
+        <td class="color">
+          <div id="canvases">
+            <div class="canvas">
+              <h2>Color (with RGB components)</h2>
+              <canvas id="drawing" width="512" height="512">
+                Sorry, this page requires HTML5 canvas support
+              </canvas>
+            </div>
+            <div class="canvas">
+              <h2>Spectrum (with 1 color locked)</h2>
+              <div id="highlightWrapper">
+                <canvas id="spectrum" width="512" height="512">
+                  Sorry, this page requires HTML5 canvas support
+                </canvas>
+                <div id="spectrumHighlight"></div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="rgbExplorer.js"></script>
+  </body>
+</html>
