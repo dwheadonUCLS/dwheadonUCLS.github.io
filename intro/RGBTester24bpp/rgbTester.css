@@ -23,8 +23,8 @@ th, td {
   padding: 10px;
 }
 
-.control {
-  margin: 10px 0 10px 0;
+#controls {
+  margin: 1em 0em;
 }
 
 div.control {
