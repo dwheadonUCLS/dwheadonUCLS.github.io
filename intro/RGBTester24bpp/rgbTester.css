@@ -1,6 +1,6 @@
 p {
   max-width: 600px;
-  margin: 0;
+  margin: 0.2em 0;
 }
 
 table {
@@ -17,10 +17,6 @@ th, td {
   font-size: 14pt;
   margin-bottom: 0.5em;
   margin-left: 50px;
-}
-
-#controls {
-  padding: 10px;
 }
 
 #controls {
@@ -52,6 +48,7 @@ i {
 #colorToGuess, #colorYouGuessed {
   width: 200px;
   height: 200px;
+  margin: 0.2em 0;
 }
 
 .color p {
@@ -84,7 +81,7 @@ h2 {
 }
 
 h3 {
-  margin-bottom: 0;
+  margin: 0 0 0.2em 0;
 }
 
 input[type="range"] {
