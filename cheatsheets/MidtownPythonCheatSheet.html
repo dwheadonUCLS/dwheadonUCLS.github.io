@@ -1,0 +1,283 @@
+<html>
+<head>
+  <link rel="stylesheet" href="JavaCheatSheet.css"></link> </head>
+<body>
+
+<header>Python Cheatsheet</header>
+
+<p>
+    The Python syntax found here will be used <em>continually</em> throughout this course. It should be committed to memory. If you have to constantly be referring back to it, the assignments will take you twice as long to do and you will lose precious time. 
+</p>
+
+<div></div>
+
+<section>
+    <header>Call a function</header>
+    <code class="syntax"><span class="method">function_name</span>(<span class='value'>parameter_value_1, parameter_value_2</span>)</code>
+    <code class="example">print("hello")</code>
+</section>
+
+<section>
+    <header>Create a <var>variable</var> or give an existing one a new value</header>
+    <code class="syntax"><var>variable_name</var> = <span class="value">initial_value</span></code>
+    <code class="example">pi = 3.14</code>
+    <div>Note: variable <em>must</em> be on the left side</div>
+</section>
+
+<section>
+<header>Naming rules</header>
+<ol>
+<li>Cannot be a reserved <span class="keyword">keyword</span></li>
+<li>Cannot <em>start</em> with a number</li>
+<li>No punctuation, delimeters, or special characters</li>
+<li>No spaces</li>
+</ol>
+<div><em>Recommended</em> to use snake case</div>
+</section>
+
+<section>
+<header>Use Snake Case</header>
+<code class="syntax">put_underscore_between_words</code>
+<div>Use when appropriate: when the purpose of the variable can't be summarized in a single word</div>
+</section>
+
+<section>
+<header>Value <span class="type">Types</span></header>
+<table>
+    <tr><th><span class="type">Type</span></th><th>Description</th><th>Example(s)</th><th>Operators</th></th>
+    <tr><td><span class="type">int</span></td><td>integers</td><td><pre>8, -3, 100000</pre></td><td><pre>+ - * / % **</pre></td></tr>
+    <tr><td><span class="type">float</span></td><td>numbers with decimal points</td><td><pre>3.14159</pre></td><td><pre>+ - * / **</pre></td></tr>
+    <tr><td><span class="type">bool</span></td><td><span class="keyword">True</span> or <span class="keyword">False</span></td><td><span class="keyword">True</span>, <span class="keyword">False</span></td><td><pre>and or not</pre> </td></tr>
+    <tr><td><span class="type">str</span></td><td>sequence of characters</td><td><pre>'hello', "3.14"</pre></td><td><pre>+ *</pre></td></tr>
+</table>
+</section>
+    
+<div></div>
+<!--
+<section>
+<header>Conditionally execute code</header>
+<code class="syntax"><span class='keyword'>if</span> <span class='value'>boolean_expression_1</span>:
+    # Code to run when boolean_expression_1 is True
+<span class='keyword'>elif</span> <span class='value'>boolean_expression_2<span>:
+    # Code to run when boolean_expression_1 is False
+    # AND boolean_expression_2 is True
+<span class='keyword'>else</span>:
+    # Code to run when BOTH conditions are False</code>
+<code class="example">if age >= 20:
+    print("You're old'")
+elif age > 13:
+    print("You're a teenager")
+else:
+    print("You're a little kid")</code>
+<div>The <span class='keyword'>else</span> and the <span class='keyword'>elif</span> parts are optional but the <span class='keyword'>if</span> part is NOT optional</div>
+<div>Also note that the <span class='keyword'>else</span> does <em>NOT</em> have a condition. Its condition is implicitly the opposite of the if's. If you put a condition it will produce a syntax error</div>
+</section>
+
+<section>
+<header>Create a boolean expression</header>
+<code class="syntax"># Any or combination of the following
+boolean value or boolean variable
+function that returns a boolean value
+comparison operation
+boolean operation</code>
+<code class="example"># Mirroring the left 
+True
+math.isinfinite(x)
+age &gt;= 16
+age &gt;= 16 <span class='keyword'>and</span> drivers_score >= 80</code>
+<div>Comparison operators: &nbsp; &lt; &nbsp; &lt;= &nbsp; == &nbsp; != &nbsp; &gt;= &nbsp; &gt;</div>
+<div>Boolean operators: <span class='keyword'>and</span>, <span class='keyword'>or</span>, <span class='keyword'>not</span></div>
+</section>
+
+
+<div></div>
+<hr><em>[From Manipulating strings]</em></hr>
+
+<section>
+    <header>Call a <span class="method">method</span> on a "thing"</header>
+    <div>Methods are like functions except that you have to call them on a thing. The thing could be an actual value or a variable that represents that value.</div>
+    <code class="syntax">thing.methodName(required, parameter, values)</code>
+    <code class="example">"hello".upper()
+word = "hello"
+word.upper()</code>
+    <div>Note: not all "things" have methods that can be called on them. It depends on the type of the thing.</div>
+    <div>Note: in many cases the method won't actually change the value. In such cases, it will return a value which you have to use somehow (e.g. print, save in a variable).</div>
+</section>
+    
+<section>
+<header>Get an item at a specific position in a sequence</header>
+<div>For strings, this gives you the specific character at that position</div>
+<code class="syntax"><var>string</var>[<span class="placeholder">index</span>]</code>
+<code class="example">word = "hello"
+word[0] # gives us "h"
+word[4] # gives us "o"  
+word[len(word) - 1] # also gives us "o"
+word[-1] # also gives us "o"</code>
+<div>Note: indecies are zero-based</div>
+<div>Note: if the index used is bigger than the size of the string, you will get an IndexError</div>
+<div>Note: By itself, the bracket notation doesn't do anything. You will want to remember the value that you get (e.g. print it or use it in some way)</div>
+</section>
+    
+
+
+<div></div>
+<hr><em>[From Repeating things]</em></hr>
+
+<section>
+<header>for loop</header>
+<code class="syntax"><span class='keyword'>for</span> <span class='placeholder'>itemName</span> in <span class='placeholder'>sequence</span>:
+    # Code to run for each item in the sequence
+</code>
+<code class="example">for letter in "bunch of letters":
+    print(letter)</code>
+</section>
+        
+<section>
+<header>Execute code a specific number of times</header>
+<code class="syntax"><span class='keyword'>for</span> <span class='placeholder'>numberName</span> in <span class="method">range</span>(<span class='placeholder'>parameters</span>):
+    # Code to run for each number in the sequence
+</code>
+<code class="example"># Prints out the numbers from 0 to 99
+for num in range(100):
+    print(num)</code>
+<div>With 1 parameter, range(num1) produces a sequence of numbers from <em>0</em> up to but <em>not including</em> num1</div>
+<div>With 2 parameters, range(num1, num2) produces a sequence of numbers from <em>num1</em> up to but <em>not including</em> num2</div>
+<div>With 3 parameters, range(num1, num2, num3) produces a sequence of numbers from <em>num1</em> up to but <em>not including</em> num2 going up (or down if negative) by num3</div>
+</section>
+
+<section>
+<header>Slicing syntax for sequences (including strings)</header>
+<code class="syntax"># Between 2 indecies
+<var>sequence</var>[<span class="placeholder">startIndex</span>:<span class="placeholder">endIndex</span>]
+# Up to an index
+<var>sequence</var>[<span class="placeholder">startIndex</span>:]
+# After an index
+<var>sequence</var>[:<span class="placeholder">endIndex</span>]
+</code>
+<code class="example">letters = "abcdefgh"
+letters[2:6] # gives us "cdef"
+letters[:4] # gives us "abcd"
+word[4:] # gives us "efgh"</code>
+<div>Note: indecies are zero-based</div>
+<div>Note: if the index used is bigger than the size of the string, you will get an IndexError</div>
+<div>Note: By itself, the bracket notation doesn't do anything. You will want to remember it, print it or use it in some way</div>
+</section>
+
+
+<div></div>
+<hr><em>[From Storing lists of values]</em></hr>
+
+<section>
+<header>Create a list with pre-determined values</header>
+<code class="syntax">[<span class="placeholder">value0</span>, <span class="placeholder">value1</span>, <span class="placeholder">value2</span>, <span class="placeholder">etc</span>]</code>
+<code class="example">primes = [1, 3, 5, 7, 11, 13]</code>
+</section>
+
+<section>
+<header>Get the size of an array</header>
+<code class="syntax">len(<var>arrayVariable</var>)</code>
+<code class="example">len(primes)</code>
+<div>By itself, this doesn't do anything. It's just a value that you can use in another statement.</div>
+</section>
+
+<section>
+<header>Set the value of an element in an array</header>
+<code class="syntax"><var>arrayName</var>[<span class="placeholder">index</span>] = <span class="placeholder">newValue</span></code>
+<code class="example">nums[3] = 10</code>
+<div>Note: if the index used is bigger than the size of the array, you will get an IndexError</div>
+</section>
+
+<section>
+<header>for-each loop</header>
+<div>Go through the contents of a list</div>
+<code class="syntax">for <var>variableName</var> in <var>list</var>:
+    # do something with each of the items in the collection
+    # anywhere you use <var>variableName</var> here it will refer
+    #   to the <em>current</em> value in the collection</code>
+<code class="example">numbers = [1, 2, 3, 4, 5, ...]
+# prints the square of each number in the list...
+for num in numbers:
+    print(num * num)
+</code>
+</section>
+
+
+<div></div>
+<hr><em>[From Looping in the unknown]</em></hr>
+
+<section>
+<header>Execute code as long as a condition is True</header>
+<code class="syntax"><span class='keyword'>while</span> <span class='value'>loopCondition</span> :
+    # Code to run as long as the
+    # loop condition is True
+</code>
+<code class="example">password = None
+while password != "abc123":
+    password = input("What's the password: ")
+</code>
+<div>Use this kind of loop in situations where you don't know how many times the loop will have to run. In this case, we don't know how many times the password will be entered incorrectly before the user will enter the correct password (ie. sabc123). They may enter it correctly on the first try or it may take them 20 tries to enter the correct password.</div>
+</section>
+
+
+<div></div>
+<hr><em>[From Dictionaries]</em></hr>
+
+<section>
+<header>Create a dictionary</header>
+<code class="syntax"><span class='placeholder'>dict_variable_name</span> = {<span class='value'>key1</span>:<span class='value'>value1</span>, <span class='value'>key2</span>:<span class='value'>value2</span>}</code>
+<code class="example">empty_dict = {}
+ids = {'Ali':52, 'Bob':254, 'Candice':734}
+</code>
+<div>Dictionaries should usually be named after the value, not the key. Note the name of the dictionary in the example above. It's not called "names". You use the employee (name) to lookup their id.</div>
+</section>
+    
+<section>
+<header>Get a value out of a dictionary</header>
+<code class="syntax"><span class='placeholder'>dict_variable_name</span>[<span class='value'>key</span>]</code>
+<code class="example">ids['Ali']</code>
+<div>You would never have this code by itself because it doesn't <em>do</em> anything. You would probably want to print it or save it in a variable or something.</div>
+</section>
+        
+<section>
+<header>Add a new key/value pair to a dictionary</header>
+<code class="syntax"><span class='placeholder'>dict_variable_name</span>[<span class='value'>new_key</span>] = <span class='value'>value</span></code>
+<code class="example">ids['Dohan'] = 8298</code>
+<div>new_key has to be a new key or else it will <em>replace</em> the existing value assigned to that key</div>
+</section>
+        
+<section>
+<header>Replace a value assigned to a key in a dictionary</header>
+<code class="syntax"><span class='placeholder'>dict_variable_name</span>[<span class='value'>existing_key</span>] = <span class='value'>new_value</span></code>
+<code class="example">ids['Ali'] = 53</code>
+</section>
+
+<section>
+<header>Check if a key is in a dictionary</header>
+<code class="syntax"><span class='value'>key</span> <span class='keyword'>in</span> <span class='placeholder'>dict_variable_name</span></code>
+<code class="example">'Ali' in ids</code>
+<div>By itself this statement doesn't do anything but it can be used wherever a boolean expression can be used (e.g. in an if-statement)</div>
+<div>You <em>cannot</em> use this to check if a value is in the dictionary, only keys</div>
+</section>
+    
+<div></div>
+<hr><em>[From Functions]</em></hr>
+
+<section>
+<header>Create a function</header>
+<code class="syntax">def <span class="function">function_name</span>(<span class="method">param_name</span>):
+  # Code to run (indented) when the method is called
+  # Most functions will want to return something
+  # Parameter values are refered to using the name given above
+</code>
+<code class="example">def times_2(num):
+    return num * 2
+</code>
+<div>Convention: make methods have an <em>action (verb)</em> name</div>
+<div>Note: you call your own functions in the same way as you call the built-in ones</div>
+</section>
+-->
+
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+</body>
+</html>
