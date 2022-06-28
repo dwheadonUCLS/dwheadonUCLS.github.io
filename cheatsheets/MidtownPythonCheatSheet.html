@@ -7,14 +7,15 @@
 
 <p>
     The Python syntax found here will be used <em>continually</em> throughout this course. It should be committed to memory. If you have to constantly be referring back to it, the assignments will take you twice as long to do and you will lose precious time. 
+    The purple boxes are the pattern (syntax) that you will always follow, the grey boxes show a specific example of actual code that follows that pattern.
 </p>
-
-<div></div>
 
 <section>
     <header>Call a function</header>
     <code class="syntax"><span class="method">function_name</span>(<span class='value'>parameter_value_1, parameter_value_2</span>)</code>
-    <code class="example">print("hello")</code>
+    <code class="example">print("hello")
+input("Name: ")</code>
+    <div>Note: not all functions take parameters but even in these cases you still have to include the parenthesis (just don't put anything inside)</div>
 </section>
 
 <section>
@@ -50,8 +51,17 @@
     <tr><td><span class="type">bool</span></td><td><span class="keyword">True</span> or <span class="keyword">False</span></td><td><span class="keyword">True</span>, <span class="keyword">False</span></td><td><pre>and or not</pre> </td></tr>
     <tr><td><span class="type">str</span></td><td>sequence of characters</td><td><pre>'hello', "3.14"</pre></td><td><pre>+ *</pre></td></tr>
 </table>
+<div>A note on operators: generally the operators only work on values of the <em>same</em> type and the result will also be of that type. If you try, for example, to add something to a str[ing] that isn't itself another str[ing] you will get an error.</div>
 </section>
     
+<section>
+    <header>Import something from a package (AKA module)</header>
+    <div>Note: all imports <em>should</em> always be the first thing in your program (at the top)</div>
+    <code class="syntax"><span class="keyword">from</span> <var>package_name</span> <span class="keyword">import</span> <span class="placeholder">thing</span></code>
+    <code class="example">from random import randint</code>
+    <div>Note: this assumes the package is already installed on your machine. Python comes with <a href="https://docs.python.org/3/py-modindex.html">a bunch of packages</a> that are installed by default.</div>
+</section>
+
 <div></div>
 <!--
 <section>
