@@ -8,8 +8,49 @@ function applyNumColors() {
   var numColors = parseInt($("#numColors").val());
   for (var i = 0; i < numColors; i++) {
     // Assumes the columns are in this order: Bin, Hex, Dec
-    colorTableBody.append('<tr><td><input onkeyup="editDecR(event);" onchange="editDecR();"></input></td><td><input onkeyup="editDecG(event);" onchange="editDecG();"></input></td><td><input onkeyup="editDecB(event);" onchange="editDecB();"></input></td><td>'+ (i>0 ? '<span class="diff">&lt;diff</span>' : '')+'</td></tr>');
+    colorTableBody.append('<tr><td><input class="red" onkeyup="editDecR(event);" onchange="editDecR();"></input></td><td><input class="green" onkeyup="editDecG(event);" onchange="editDecG();"></input></td><td><input class="blue" onkeyup="editDecB(event);" onchange="editDecB();"></input></td><td>'+ (i>0 ? '<span class="diff">&lt;diff</span>' : '')+'</td></tr>');
   }
+  $("input").on("paste", function() {
+    var $this = $(this);
+    setTimeout(function() {
+        var vals = $this.val().split(/\s+/);
+        $this.val(vals[0]);
+        if ($this.attr("class") == "red") {
+          updateDecColor($this[0])
+        } else if ($this.attr("class") == "green") {
+          updateDecColor($this[0].parentElement.previousElementSibling.firstElementChild)
+        } else if ($this.attr("class") == "blue") {
+          updateDecColor($this[0].parentElement.previousElementSibling.previousElementSibling.firstElementChild)
+        }
+        var next = null;
+        if ($this.parent().next().find("input").length) {
+          next = $this.parent().next().find("input").first();
+        } else if ($this.parent().parent().next().find("input").length) {
+          next = $this.parent().parent().next().find("input").first();
+        } else {
+          next = null;
+        }
+        var i = 1;
+        while (next.length && i<vals.length) {
+          next.val(vals[i]);
+          if (next.attr("class") == "red") {
+            updateDecColor(next[0])
+          } else if (next.attr("class") == "green") {
+            updateDecColor(next[0].parentElement.previousElementSibling.firstElementChild)
+          } else if (next.attr("class") == "blue") {
+            updateDecColor(next[0].parentElement.previousElementSibling.previousElementSibling.firstElementChild)
+          }  
+          ++i;
+          if (next.parent().next().find("input").length) {
+            next = next.parent().next().find("input").first();
+          } else if (next.parent().parent().next().find("input").length) {
+            next = next.parent().parent().next().find("input").first();
+          } else {
+            next = null;
+          }
+        }
+    }, 0);
+  });
   $("#promptBase").show();
   $("#colorTable").css("display", "table");
   $('input[type="radio"]').prop('checked', false);
