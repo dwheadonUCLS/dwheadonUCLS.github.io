@@ -1,6 +1,8 @@
 <html>
 <head>
-  <link rel="stylesheet" href="JavaCheatSheet.css"></link> </head>
+  <link rel="stylesheet" href="JavaCheatSheet.css"></link> 
+  <title>Python Cheatsheet</title>
+</head>
 <body>
 
 <header>Python Cheatsheet</header>
@@ -97,7 +99,31 @@ for num in range(100):
 </section>
     
     
-<div></div>
+<section>
+    <header>Call a <span class="method">method</span> on a "thing"</header>
+    <div>Methods are like functions except that you have to call them on a thing. The thing could be an actual value or a variable that represents that value.</div>
+    <code class="syntax">thing.methodName(required, parameter, values)</code>
+    <code class="example">"hello".upper()
+word = "hello"
+word.upper()</code>
+    <div>Note: not all "things" have methods that can be called on them. It depends on the type of the thing.</div>
+    <div>Note: in many cases the method won't actually change the value. In such cases, it will return a value which you have to use somehow (e.g. print, save in a variable).</div>
+</section>
+    
+<section>
+<header>Get an item at a specific position in a sequence</header>
+<div>For strings, this gives you the specific character at that position</div>
+<code class="syntax"><var>string</var>[<span class="placeholder">index</span>]</code>
+<code class="example">word = "hello"
+word[0] # gives us "h"
+word[4] # gives us "o"  
+word[len(word) - 1] # also gives us "o"
+word[-1] # also gives us "o"</code>
+<div>Note: indecies are zero-based</div>
+<div>Note: if the index used is bigger than the size of the string, you will get an IndexError</div>
+<div>Note: By itself, the bracket notation doesn't do anything. You will want to remember the value that you get (e.g. print it or use it in some way)</div>
+</section>
+    
 <!--
 <section>
 <header>Conditionally execute code</header>
@@ -138,31 +164,6 @@ age &gt;= 16 <span class='keyword'>and</span> drivers_score >= 80</code>
 <div></div>
 <hr><em>[From Manipulating strings]</em></hr>
 
-<section>
-    <header>Call a <span class="method">method</span> on a "thing"</header>
-    <div>Methods are like functions except that you have to call them on a thing. The thing could be an actual value or a variable that represents that value.</div>
-    <code class="syntax">thing.methodName(required, parameter, values)</code>
-    <code class="example">"hello".upper()
-word = "hello"
-word.upper()</code>
-    <div>Note: not all "things" have methods that can be called on them. It depends on the type of the thing.</div>
-    <div>Note: in many cases the method won't actually change the value. In such cases, it will return a value which you have to use somehow (e.g. print, save in a variable).</div>
-</section>
-    
-<section>
-<header>Get an item at a specific position in a sequence</header>
-<div>For strings, this gives you the specific character at that position</div>
-<code class="syntax"><var>string</var>[<span class="placeholder">index</span>]</code>
-<code class="example">word = "hello"
-word[0] # gives us "h"
-word[4] # gives us "o"  
-word[len(word) - 1] # also gives us "o"
-word[-1] # also gives us "o"</code>
-<div>Note: indecies are zero-based</div>
-<div>Note: if the index used is bigger than the size of the string, you will get an IndexError</div>
-<div>Note: By itself, the bracket notation doesn't do anything. You will want to remember the value that you get (e.g. print it or use it in some way)</div>
-</section>
-    
 
 
 <div></div>
