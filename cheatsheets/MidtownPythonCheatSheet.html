@@ -159,17 +159,20 @@ age &gt;= 16 <span class='keyword'>and</span> drivers_score >= 80</code>
 <div>Boolean operators: <span class='keyword'>and</span>, <span class='keyword'>or</span>, <span class='keyword'>not</span></div>
 </section>
 
-<!--
-
 <section>
-<header>for loop</header>
-<code class="syntax"><span class='keyword'>for</span> <span class='placeholder'>itemName</span> in <span class='placeholder'>sequence</span>:
-    # Code to run for each item in the sequence
+<header>Execute code as long as a condition is True</header>
+<code class="syntax"><span class='keyword'>while</span> <span class='value'>loopCondition</span>:
+    # Code to run as long as the
+    # loop condition is True
 </code>
-<code class="example">for letter in "bunch of letters":
-    print(letter)</code>
+<code class="example">password = None
+while password != "abc123":
+    password = input("What's the password: ")
+</code>
+<div>Use this kind of loop in situations where you don't know how many times the loop will have to run. In this example, we don't know how many times the password will be entered incorrectly before the user will enter the correct password (ie. abc123). They may enter it correctly on the first try or it may take them 20 tries to enter the correct password.</div>
 </section>
-        
+    
+<!--
 <section>
 <header>Slicing syntax for sequences (including strings)</header>
 <code class="syntax"># Between 2 indecies
@@ -212,37 +215,7 @@ word[4:] # gives us "efgh"</code>
 <div>Note: if the index used is bigger than the size of the array, you will get an IndexError</div>
 </section>
 
-<section>
-<header>for-each loop</header>
-<div>Go through the contents of a list</div>
-<code class="syntax">for <var>variableName</var> in <var>list</var>:
-    # do something with each of the items in the collection
-    # anywhere you use <var>variableName</var> here it will refer
-    #   to the <em>current</em> value in the collection</code>
-<code class="example">numbers = [1, 2, 3, 4, 5, ...]
-# prints the square of each number in the list...
-for num in numbers:
-    print(num * num)
-</code>
-</section>
-
-
 <div></div>
-<hr><em>[From Looping in the unknown]</em></hr>
-
-<section>
-<header>Execute code as long as a condition is True</header>
-<code class="syntax"><span class='keyword'>while</span> <span class='value'>loopCondition</span> :
-    # Code to run as long as the
-    # loop condition is True
-</code>
-<code class="example">password = None
-while password != "abc123":
-    password = input("What's the password: ")
-</code>
-<div>Use this kind of loop in situations where you don't know how many times the loop will have to run. In this case, we don't know how many times the password will be entered incorrectly before the user will enter the correct password (ie. sabc123). They may enter it correctly on the first try or it may take them 20 tries to enter the correct password.</div>
-</section>
-
 
 <div></div>
 <hr><em>[From Dictionaries]</em></hr>
