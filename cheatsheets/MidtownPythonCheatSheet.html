@@ -192,6 +192,21 @@ while password != "abc123":
 <div>Note: you call your own functions in the same way as you call the built-in ones</div>
 </section>
     
+
+<section>
+<header>Run dangerous code (that could cause an exception)</header>
+<code class="syntax"><span class='keyword'>try</span>:
+    # Dangerous code here
+<span class='keyword'>except <span class="type">ErrorTypeToCatch</span>:</span>:
+    # Code to run when the exception is generated</code>
+<code class="example">try:
+    num = int("hello")
+except:
+    print("there was a problem...")
+</code>
+</section>
+    
+    
 <!--
 <section>
 <header>Slicing syntax for sequences (including strings)</header>
