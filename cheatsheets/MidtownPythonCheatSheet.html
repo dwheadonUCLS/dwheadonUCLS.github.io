@@ -173,12 +173,6 @@ while password != "abc123":
 </section>
     
 <section>
-<header>Create a list with pre-determined values</header>
-<code class="syntax">[<span class="placeholder">value0</span>, <span class="placeholder">value1</span>, <span class="placeholder">value2</span>, <span class="placeholder">etc</span>]</code>
-<code class="example">primes = [1, 3, 5, 7, 11, 13]</code>
-</section>
-
-<section>
 <header>Create a function</header>
 <code class="syntax">def <span class="function">function_name</span>(<span class="method">param_name</span>):
     # Code to run (indented) when the method is called
@@ -205,9 +199,37 @@ except:
     print("there was a problem...")
 </code>
 </section>
+
+<section>
+<header>Create a list with pre-determined values</header>
+<code class="syntax">[<span class="placeholder">value0</span>, <span class="placeholder">value1</span>, <span class="placeholder">value2</span>, <span class="placeholder">etc</span>]</code>
+<code class="example">primes = [1, 3, 5, 7, 11, 13]</code>
+</section>
     
+<section>
+<header>Get a value from a list</header>
+<code class="syntax"><span class="placeholder">list</span>[<span class='placeholder'>num</span>]</code>
+<code class="example">primes[2] # returns 5 (the value at index 2 which is the third value)
+</code>
+<div>Note: this in itself doesn't do anything, you'll want to save this in a variable or use it in a calculation</div>
+<div>Note: if the index used is bigger than the size of the array, you will get an IndexError</div>
+</section>
+
+<section>
+<header>Set the value of an element in a list</header>
+<code class="syntax"><var>arrayName</var>[<span class="placeholder">index</span>] = <span class="placeholder">newValue</span></code>
+<code class="example">primes[2] = 10</code>
+<div>Note: if the index used is bigger than the size of the array, you will get an IndexError</div>
+</section>
     
-<!--
+<section>
+<header>Check if a value is in a list</header>
+<code class="syntax"><span class="placeholder">value</span> <span class='keyword'>in</span> <span class="placeholder">list</span></code>
+<code class="example">6 in primes # this would evaluate to False
+</code>
+<div>Note: this in itself doesn't do anything, you'll want to use this in a if-statement or a while-loop</div>
+</section>
+        
 <section>
 <header>Slicing syntax for sequences (including strings)</header>
 <code class="syntax"># Between 2 indecies
@@ -234,14 +256,8 @@ word[4:] # gives us "efgh"</code>
 <div>By itself, this doesn't do anything. It's just a value that you can use in another statement.</div>
 </section>
 
-<section>
-<header>Set the value of an element in an array</header>
-<code class="syntax"><var>arrayName</var>[<span class="placeholder">index</span>] = <span class="placeholder">newValue</span></code>
-<code class="example">nums[3] = 10</code>
-<div>Note: if the index used is bigger than the size of the array, you will get an IndexError</div>
-</section>
-
 <div></div>
+<!--
 
 <div></div>
 <hr><em>[From Dictionaries]</em></hr>
