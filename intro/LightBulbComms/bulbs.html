@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Light Bulb Comms</title>
+    <link rel="stylesheet" href="bulbs.css" />
+  </head>
+  <body>
+    <h1>Light Bulb Comms</h1>
+    <div id="controls">
+      <label>Number of light bulbs</label>
+      <input id="numBulbs" type="number" value=1 onchange="changeNumBulbs();" min=1 max=10></input>
+      <label id="numLevelsLabel">Number of light levels</label>
+      <input id="numLevels" type="number" value=10 onchange="changeNumLevels();" min=2 max=256></input>
+      <input id="switchHideInput" type="checkbox" onclick="hideSwitches();" />
+      <label>Hide switches</label>
+    </div>
+    <table>
+      <tr id="rowBulbs">
+        <td>
+          <img id="b0" src="bulb.png" />
+          <div class="levelSwitchBox">
+            <span class="levelLabels">
+              <label class="maxLabel">9</label>
+              <label class="minLabel">0</label>
+            </span>
+            <input id="s0" class="lightSwitch" type="range" value=0 min=0 max=9 onchange="changeLevel(0);"></input>
+            <span id="l0" class="currentLevel">0<span>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <!--
+      <input id="offset" type="checkbox" onclick="removeOffset();"></input>
+    -->
+    <script src="bulbs.js"></script>
+  </body>
+</html>

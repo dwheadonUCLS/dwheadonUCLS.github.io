@@ -1,0 +1,77 @@
+/* This must be the first CSS rule in the sheet for the JS to work: which isn't working anyway */
+.levelSwitchBox {
+  display: block;
+}
+
+.levelSwitchBox {
+  position: relative;
+}
+
+body {
+  background-color: #000;
+  color: #FFF;
+}
+
+input[type="number"] {
+  width: 3em;
+}
+
+#controls {
+  margin-bottom: 1em;
+}
+
+#switchHideInput, #numLevelsLabel {
+  margin-left: 2em;
+}
+
+td {
+  text-align: center;
+}
+
+img {
+  width: 100px;
+}
+
+.maxLabel {
+  position: absolute;
+  top: 0;
+  right: 60%;
+}
+
+.minLabel {
+  /* 
+  position: absolute;
+  bottom: 0;
+  right: 60%;
+  */
+  position: relative;
+  right: 10%;
+}
+
+.currentLevel {
+  /*
+  position: absolute;
+  top: 40%;
+  left: 60%;
+  */
+  font-size: 8em;
+  display: block;
+}
+
+input.lightSwitch {
+  width: 10px;
+  height: 100px;
+  -webkit-appearance: slider-vertical;
+  writing-mode: bt-lr;
+  margin: auto;
+}
+
+img#b0 {
+  background-color: #000;
+}
+
+#offset {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
