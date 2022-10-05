@@ -346,7 +346,7 @@ public static <span class="type">returnType</span> <span class="method">methodNa
 <header>Pass an exception on (to whomever called this method)</header>
 <code class="syntax">public void myMethod() <span class='keyword'>throws</span> <span class="type">ExceptionType</span> {
     if (<span class='value'>problemSituation == true</span>) {
-        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="type">ExceptionType</span>();
+        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="type">ExceptionType</span>("exception message");
     }
 }</code>
 <code class="example">public void doDangerousStuff() throws DangerousException {
