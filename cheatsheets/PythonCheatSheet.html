@@ -11,13 +11,14 @@
 
 <section>
     <header>Create a <var>variable</var> or give an existing one a new value</header>
+    <div>Variables allow us to "remember" or "store" a value so that we can use it later in our program.</div>
     <code class="syntax"><var>variable_name</var> = <span class="value">initial_value</span></code>
     <code class="example">pi = 3.14</code>
-    <div>Note: variable <em>must</em> be on the left side</div>
+    <div>Note: the variable <em>must</em> be on the left side</div>
 </section>
 
 <section>
-<header>Naming rules</header>
+<header>Naming rules for variables</header>
 <ol>
 <li>Cannot be a reserved <span class="keyword">keyword</span></li>
 <li>Cannot <em>start</em> with a number</li>
@@ -34,24 +35,48 @@
 </section>
 
 <section>
-<header>Value <span class="type">Types</span></header>
-<table>
-    <tr><th><span class="type">Type</span></th><th>Description</th><th>Example(s)</th><th>Operators</th></th>
-    <tr><td><span class="type">int</span></td><td>integers</td><td><pre>8, -3, 100000</pre></td><td><pre>+ - * / % **</pre></td></tr>
-    <tr><td><span class="type">float</span></td><td>numbers with decimal points</td><td><pre>3.14159</pre></td><td><pre>+ - * / **</pre></td></tr>
-    <tr><td><span class="type">bool</span></td><td><span class="keyword">True</span> or <span class="keyword">False</span></td><td><span class="keyword">True</span>, <span class="keyword">False</span></td><td><pre>and or not</pre> </td></tr>
-    <tr><td><span class="type">str</span></td><td>sequence of characters</td><td><pre>'hello', "3.14"</pre></td><td><pre>+ *</pre></td></tr>
-</table>
-</section>
-    
-<section>
     <header>Call a function</header>
-    <code class="syntax"><span class="method">function_name</span>(<span class='value'>parameter_value</span>)</code>
+    <code class="syntax"><span class="method">function_name</span>(<span class='value'>parameter1_value</span>, <span class='value'>parameter2_value</span>)</code>
     <code class="example">print("hello")</code>
-    <div>Note: if the function returns a value the call will get replaced by the value</div>
+    <div>Not all functions take parameters but you still need the parenthesis. Some functions take multiple parameters: you separate them with a comma</div>
 </section>
-    
+<section>
+    <header>Call a function that returns a value</header>
+    <div>Some functions return a value. There's no point to calling these kinds of functions <em>unless</em> you actually do something with the results. Usually this will involve saving the value in a variable which you can then use later in your program. The function call will get replaced by the value that it returns.</div>
+    <code class="syntax"><var>variable_name</var> = <span class="method">function_name</span>(<span class='value'>parameter1_value</span>, <span class='value'>parameter2_value</span>)</code>
+    <div>Example: calling a function that returns a value (the <em>letters</em> that the user typed) and saves it in a variable (so we can use it later)</div>
+    <code class="example">name = input("What's your name: ")</code>
+</section>
 
+
+<div></div>
+<hr><em>[From Calculating things]</em></hr>
+<section>
+    <header>Values can have different <span class="type">Types</span></header>
+    <table>
+        <tr><th><span class="type">Type</span></th><th>Description</th><th>Example(s)</th><th>Operators</th></th>
+        <tr><td><span class="type">int</span></td><td>integers</td><td><pre>8, -3, 100000</pre></td><td><pre>+ - * / % **</pre></td></tr>
+        <tr><td><span class="type">float</span></td><td>numbers with decimal points</td><td><pre>3.14159</pre></td><td><pre>+ - * / **</pre></td></tr>
+        <tr><td><span class="type">bool</span></td><td><span class="keyword">True</span> or <span class="keyword">False</span></td><td><span class="keyword">True</span>, <span class="keyword">False</span></td><td><pre>and or not</pre> </td></tr>
+        <tr><td><span class="type">str</span></td><td>sequence of characters</td><td><pre>'hello', "3.14"</pre></td><td><pre>+ *</pre></td></tr>
+    </table>
+    <div>The type of the value / variable will determine the types of operations that you can perform on it. You cannot, for example, divide a string. What would "hello" / 10 be? That doesn't make sense.</div>
+    <div>Even if it only contains numerals, if it's in quotes it's still a string: "20" / 10 won't work either because it's the string "two zero" not the number twenty.</div>
+</section>
+<section>
+    <header>Built-in functions</header>
+    <div>There are a bunch of built-in functions that you learn here but the "syntax" for all functions is the same (see "Call a function..." sections above) so they won't be covered here.
+        See the <a href="https://docs.python.org/3/library/functions.html">documentation here</a> for more details on these functions (input, int, len, print, str) and others that are available. Note that many of these return a value so if you don't save it in a variable it does <strong>nothing</strong>.
+    </div>
+    <div>Example: pointless function call (second line below)</div>
+    <code class="example">numerals = input("Type a number: ")
+int(numerals)</code>
+    <div>The variable <var>numerals</var> is still just a bunch of letters because you didn't <em>do</em> anything with the result of the function int()</div>
+    <div>Example: purposeful function call</div>
+    <code class="example">numerals = input("Type a number: ")
+number = int(numerals)</code>
+</section>
+        
 <!--
 <div></div>
 <hr><em>[From Making decisions]</em></hr>
