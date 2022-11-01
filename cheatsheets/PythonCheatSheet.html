@@ -120,6 +120,14 @@ age &gt;= 16 <span class='keyword'>and</span> drivers_score >= 80</code>
 <hr><em>[From Manipulating strings]</em></hr>
 
 <section>
+    <header>The <span class="keyword">in</span> operator</header>
+    <div>This is a special operator that can only be used on two strings (or variables that hold strings)</div>
+    <code class="syntax">string1 <span class="keyword">in</span> string2</code>
+    <code class="example">"hello" in "hello world"</code>
+    <div>Note: This doesn't actually <em>do</em> anything but returns <span class="keyword">true</span> / <span class="keyword">false</span> which can be used in an if statement (for example)</div>
+</section>
+
+<section>
     <header>Call a <span class="method">method</span> on a "thing"</header>
     <div>Methods are like functions except that you have to call them on a thing. The thing could be an actual value or a variable that represents that value.</div>
     <code class="syntax">thing.methodName(required, parameter, values)</code>
@@ -145,8 +153,6 @@ word[-1] # also gives us "o"</code>
 </section>
     
 
-
-<!--
 <div></div>
 <hr><em>[From Repeating things]</em></hr>
 
@@ -191,6 +197,7 @@ word[4:] # gives us "efgh"</code>
 </section>
 
 
+<!--
 <div></div>
 <hr><em>[From Storing lists of values]</em></hr>
 
