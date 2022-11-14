@@ -206,26 +206,26 @@ word[4:] # gives us "efgh"</code>
 </section>
 
 <section>
-<header>Get the size of an array</header>
-<code class="syntax">len(<var>arrayVariable</var>)</code>
+<header>Get the size of a list</header>
+<code class="syntax">len(<var>list_variable</var>)</code>
 <code class="example">len(primes)</code>
 <div>By itself, this doesn't do anything. It's just a value that you can use in another statement.</div>
 </section>
 
 <section>
-<header>Set the value of an element in an array</header>
-<code class="syntax"><var>arrayName</var>[<span class="placeholder">index</span>] = <span class="placeholder">newValue</span></code>
+<header>Set the value of an element in a list</header>
+<code class="syntax"><var>list_name</var>[<span class="placeholder">index</span>] = <span class="placeholder">new_value</span></code>
 <code class="example">nums[3] = 10</code>
-<div>Note: if the index used is bigger than the size of the array, you will get an IndexError</div>
+<div>Note: if the index used is bigger than the size of the list, you will get an IndexError</div>
 </section>
 
 <section>
 <header>for-each loop</header>
 <div>Go through the contents of a list</div>
-<code class="syntax">for <var>variableName</var> in <var>list</var>:
-    # do something with each of the items in the collection
-    # anywhere you use <var>variableName</var> here it will refer
-    #   to the <em>current</em> value in the collection</code>
+<code class="syntax">for <var>variable_name</var> in <var>list</var>:
+    # do something with each of the items in the list
+    # anywhere you use <var>variable_name</var> here it will refer
+    #   to the <em>current</em> value in the list</code>
 <code class="example">numbers = [1, 2, 3, 4, 5, ...]
 # prints the square of each number in the list...
 for num in numbers:
