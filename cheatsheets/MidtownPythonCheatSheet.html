@@ -70,7 +70,18 @@ input("Name: ")</code>
 <div>A note on operators: generally the operators only work on values of the <em>same</em> type and the result will also be of that type. If you try, for example, to add something to a str[ing] that isn't itself another str[ing] you will get an error.</div>
 </section>
     
-<!--
+<section>
+    <header>Execute code a specific number of times</header>
+    <code class="syntax"><span class='keyword'>for</span> <span class='placeholder'>numberName</span> in <span class="method">range</span>(<span class='placeholder'>parameters</span>):
+    # Code to run for each number in the sequence</code>
+    <code class="example"># Prints out the numbers from 0 to 99
+for num in range(100):
+    print(num)</code>
+    <div>With 1 parameter, range(num1) produces a sequence of numbers from <em>0</em> up to but <em>not including</em> num1</div>
+    <div>With 2 parameters, range(num1, num2) produces a sequence of numbers from <em>num1</em> up to but <em>not including</em> num2</div>
+    <div>With 3 parameters, range(num1, num2, num3) produces a sequence of numbers from <em>num1</em> up to but <em>not including</em> num2 going up (or down if negative) by num3</div>
+</section>
+    
 <section>
     <header>Comment out a line of code</header>
     <code class="syntax"><span class="keyword">#</span> line of code you don't want to run anymore</code>
@@ -93,19 +104,7 @@ print(blue)
     <div></div>
 </section>
 
-<section>
-    <header>Execute code a specific number of times</header>
-    <code class="syntax"><span class='keyword'>for</span> <span class='placeholder'>numberName</span> in <span class="method">range</span>(<span class='placeholder'>parameters</span>):
-    # Code to run for each number in the sequence</code>
-    <code class="example"># Prints out the numbers from 0 to 99
-for num in range(100):
-    print(num)</code>
-    <div>With 1 parameter, range(num1) produces a sequence of numbers from <em>0</em> up to but <em>not including</em> num1</div>
-    <div>With 2 parameters, range(num1, num2) produces a sequence of numbers from <em>num1</em> up to but <em>not including</em> num2</div>
-    <div>With 3 parameters, range(num1, num2, num3) produces a sequence of numbers from <em>num1</em> up to but <em>not including</em> num2 going up (or down if negative) by num3</div>
-</section>
-    
-    
+<!--
 <section>
     <header>Call a <span class="method">method</span> on a "thing"</header>
     <div>Methods are like functions except that you have to call them on a thing. The thing could be an actual value or a variable that represents that value.</div>
