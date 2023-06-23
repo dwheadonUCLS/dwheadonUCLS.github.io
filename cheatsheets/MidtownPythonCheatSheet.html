@@ -93,6 +93,18 @@ print(blue)
 </section>
     
 <section>
+    <header>Call a <span class="method">method</span> on a "thing"</header>
+    <div>Methods are like functions except that you have to call them on a thing. The thing could be an actual value or a variable that represents that value.</div>
+    <code class="syntax">thing.methodName(required, parameter, values)</code>
+    <code class="example">"hello".upper()
+word = "hello"
+word.upper()</code>
+    <div>Note: not all "things" have methods that can be called on them. It depends on the type of the thing.</div>
+    <div>Note: in many cases the method won't actually change the value. In such cases, it will return a value which you have to use somehow (e.g. print, save in a variable).</div>
+</section>
+    
+<!--
+<section>
     <header>Execute code a specific number of times</header>
     <code class="syntax"><span class='keyword'>for</span> <span class='placeholder'>numberName</span> in <span class="method">range</span>(<span class='placeholder'>parameters</span>):
     # Indented code to run for each
@@ -103,18 +115,6 @@ for num in range(100):
     <div>With 1 parameter, range(num1) produces a sequence of numbers from <em>0</em> up to but <em>not including</em> num1</div>
     <div>With 2 parameters, range(num1, num2) produces a sequence of numbers from <em>num1</em> up to but <em>not including</em> num2</div>
     <div>With 3 parameters, range(num1, num2, num3) produces a sequence of numbers from <em>num1</em> up to but <em>not including</em> num2 going up (or down if negative) by num3</div>
-</section>
-    
-<!--
-<section>
-    <header>Call a <span class="method">method</span> on a "thing"</header>
-    <div>Methods are like functions except that you have to call them on a thing. The thing could be an actual value or a variable that represents that value.</div>
-    <code class="syntax">thing.methodName(required, parameter, values)</code>
-    <code class="example">"hello".upper()
-word = "hello"
-word.upper()</code>
-    <div>Note: not all "things" have methods that can be called on them. It depends on the type of the thing.</div>
-    <div>Note: in many cases the method won't actually change the value. In such cases, it will return a value which you have to use somehow (e.g. print, save in a variable).</div>
 </section>
     
 <section>
