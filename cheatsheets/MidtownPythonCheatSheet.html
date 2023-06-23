@@ -103,6 +103,18 @@ word.upper()</code>
     <div>Note: in many cases the method won't actually change the value. In such cases, it will return a value which you have to use somehow (e.g. print, save in a variable).</div>
 </section>
     
+<section>
+    <header>Create a function</header>
+    <code class="syntax">def <span class="function">function_name</span>(<span class="method">param_name</span>):
+    # Code to run (indented) when the method is called
+    # Most functions will want to return something
+    # Parameter values are refered to using the name given above</code>
+    <code class="example">def times_2(num):
+return num * 2</code>
+    <div>Convention: make methods have an <em>action (verb)</em> name</div>
+    <div>Note: you call your own functions in the same way as you call the built-in ones</div>
+</section>
+
 <!--
 <section>
     <header>Execute code a specific number of times</header>
@@ -179,21 +191,6 @@ while password != "abc123":
 <div>Use this kind of loop in situations where you don't know how many times the loop will have to run. In this example, we don't know how many times the password will be entered incorrectly before the user will enter the correct password (ie. abc123). They may enter it correctly on the first try or it may take them 20 tries to enter the correct password.</div>
 </section>
     
-<section>
-<header>Create a function</header>
-<code class="syntax">def <span class="function">function_name</span>(<span class="method">param_name</span>):
-    # Code to run (indented) when the method is called
-    # Most functions will want to return something
-    # Parameter values are refered to using the name given above
-</code>
-<code class="example">def times_2(num):
-    return num * 2
-</code>
-<div>Convention: make methods have an <em>action (verb)</em> name</div>
-<div>Note: you call your own functions in the same way as you call the built-in ones</div>
-</section>
-    
-
 <section>
 <header>Run dangerous code (that could cause an exception)</header>
 <code class="syntax"><span class='keyword'>try</span>:
