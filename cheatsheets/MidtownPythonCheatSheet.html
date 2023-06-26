@@ -105,8 +105,8 @@ word.upper()</code>
     
 <section>
     <header>Create a function</header>
-    <code class="syntax">def <span class="function">function_name</span>(<span class="method">param_name</span>):
-    # Code to run (indented) when the method is called
+    <code class="syntax"><span class='keyword'>def</span> <span class="placeholder">function_name</span>(<span class="method">param_names</span>):
+    # Code to run (indented) when the function is called
     # Most functions will want to return something
     # Parameter values are refered to using the name given above</code>
     <code class="example">def times_2(num):
@@ -114,6 +114,19 @@ word.upper()</code>
     return answer</code>
     <div>Convention: make methods have an <em>action (verb)</em> name</div>
     <div>Note: you call your own functions in the same way as you call the built-in ones</div>
+</section>
+
+<section>
+    <header>Prepare a function for use in PythoShop</header>
+    <code class="syntax">@<span class='placeholder'>decorator_name</span>
+<span class='keyword'>def</span> <span class="placeholder">function_name</span>(<span class="method">required_params, **kwargs</span>):
+    # Code to run (indented) when the function is called</code>
+    <code class="example">@export_tool
+def change_pixel(image, x, y, **kwargs):
+    # code to change a pixel...</code>
+    <div>To get the PythoShop decorators you'll need "<pre style="display: inline;">from PhytoShopExports import *</pre>" with your other imports (at the top of your file)</div>
+    <div>A "tool" is required to have image, x, and y parameters (in that order) with an optional color parameter that should go after y and before kwargs</div>
+    <div>A "filter" is only required to have an image parameter (also with an optional color parameter)</div>
 </section>
 
 <!--
