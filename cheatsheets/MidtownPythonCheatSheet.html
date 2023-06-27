@@ -95,7 +95,7 @@ print(blue)
 <section>
     <header>Call a <span class="method">method</span> on a "thing"</header>
     <div>Methods are like functions except that you have to call them on a thing. The thing could be an actual value or a variable that represents that value.</div>
-    <code class="syntax">thing.methodName(required, parameter, values)</code>
+    <code class="syntax">thing.method_name(required, parameter, values)</code>
     <code class="example">"hello".upper()
 word = "hello"
 word.upper()</code>
@@ -140,6 +140,14 @@ for num in range(100):
     <div>With 1 parameter, range(num1) produces a sequence of numbers from <em>0</em> up to but <em>not including</em> num1</div>
     <div>With 2 parameters, range(num1, num2) produces a sequence of numbers from <em>num1</em> up to but <em>not including</em> num2</div>
     <div>With 3 parameters, range(num1, num2, num3) produces a sequence of numbers from <em>num1</em> up to but <em>not including</em> num2 going up (or down if negative) by num3</div>
+</section>
+    
+<section>
+    <header>Get an <i>attribute</i> of a "thing"</header>
+    <div>Attributes are variables that are attached to an object. They are used like methods except that you don't call them: no parenthesis / parameters needed.</div>
+    <code class="syntax">thing.attribute_name</code>
+    <code class="example">print(image.width)</code>
+    <div>Note: the kind of the "thing" will determine the attributes available. Consult the documentation for details.</div>
 </section>
     
 <!--
