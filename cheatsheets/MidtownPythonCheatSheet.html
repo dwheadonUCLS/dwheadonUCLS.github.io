@@ -149,6 +149,19 @@ for num in range(100):
     <code class="example">print(image.width)</code>
     <div>Note: the kind of the "thing" will determine the attributes available. Consult the documentation for details. Image attributes can be found <a href="https://pillow.readthedocs.io/en/stable/reference/Image.html#image-attributes">here</a>.</div>
 </section>
+ 
+<section>
+    <header>Run dangerous code (that could cause an exception)</header>
+<code class="syntax"><span class='keyword'>try</span>:
+    # Dangerous code here
+<span class='keyword'>except</span> <span class="type">ExceptionTypeToCatch</span>:
+    # Code to run when the exception is generated</code>
+<code class="example">try:
+    num = int("hello")
+except:
+    print("there was a problem...")</code>
+    <div>Note: If no exception type is specified, it will catch all exceptions.</div>
+</section>
     
 <!--
 <section>
@@ -213,19 +226,6 @@ while password != "abc123":
 <div>Use this kind of loop in situations where you don't know how many times the loop will have to run. In this example, we don't know how many times the password will be entered incorrectly before the user will enter the correct password (ie. abc123). They may enter it correctly on the first try or it may take them 20 tries to enter the correct password.</div>
 </section>
     
-<section>
-<header>Run dangerous code (that could cause an exception)</header>
-<code class="syntax"><span class='keyword'>try</span>:
-    # Dangerous code here
-<span class='keyword'>except <span class="type">ErrorTypeToCatch</span>:</span>:
-    # Code to run when the exception is generated</code>
-<code class="example">try:
-    num = int("hello")
-except:
-    print("there was a problem...")
-</code>
-</section>
-
 <section>
 <header>Create a list with pre-determined values</header>
 <code class="syntax">[<span class="placeholder">value0</span>, <span class="placeholder">value1</span>, <span class="placeholder">value2</span>, <span class="placeholder">etc</span>]</code>
