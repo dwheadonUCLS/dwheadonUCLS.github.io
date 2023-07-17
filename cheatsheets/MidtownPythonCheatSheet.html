@@ -226,20 +226,7 @@ age &gt;= 16 <span class='keyword'>and</span> drivers_score >= 80</code>
 <div>Comparison operators: &nbsp; &lt; &nbsp; &lt;= &nbsp; == &nbsp; != &nbsp; &gt;= &nbsp; &gt;</div>
 <div>Boolean operators: <span class='keyword'>and</span>, <span class='keyword'>or</span>, <span class='keyword'>not</span></div>
 </section>
-<!--
-<section>
-<header>Execute code as long as a condition is True</header>
-<code class="syntax"><span class='keyword'>while</span> <span class='value'>loopCondition</span>:
-    # Code to run as long as the
-    # loop condition is True
-</code>
-<code class="example">password = None
-while password != "abc123":
-    password = input("What's the password: ")
-</code>
-<div>Use this kind of loop in situations where you don't know how many times the loop will have to run. In this example, we don't know how many times the password will be entered incorrectly before the user will enter the correct password (ie. abc123). They may enter it correctly on the first try or it may take them 20 tries to enter the correct password.</div>
-</section>
-    
+
 <section>
 <header>Create a list with pre-determined values</header>
 <code class="syntax">[<span class="placeholder">value0</span>, <span class="placeholder">value1</span>, <span class="placeholder">value2</span>, <span class="placeholder">etc</span>]</code>
@@ -290,15 +277,37 @@ word[4:] # gives us "efgh"</code>
 
 
 <section>
-<header>Get the size of an array</header>
+<header>Get the size of a list</header>
 <code class="syntax">len(<var>arrayVariable</var>)</code>
 <code class="example">len(primes)</code>
 <div>By itself, this doesn't do anything. It's just a value that you can use in another statement.</div>
 </section>
 
-<div></div>
-<!--
+<section>
+    <header>Execute code for each thing in a sequence (e.g. list)</header>
+    <code class="syntax"><span class='keyword'>for</span> <span class='placeholder'>variable_name</span> in <span class='placeholder'>sequence</span>:
+    # Indented code to run for each
+    #   thing in the sequence</code>
+    <code class="example"># Prints out each number individually
+for num in [9, 2, 6, 1, 7]:
+    print("A number: ", num)</code>
+    <div>This is the general syntax for a for-loop. Using a range (as we saw before) simply creates a sequence of numbers that you then go through.</div>
+</section>
 
+<!--
+<section>
+<header>Execute code as long as a condition is True</header>
+<code class="syntax"><span class='keyword'>while</span> <span class='value'>loopCondition</span>:
+    # Code to run as long as the
+    # loop condition is True
+</code>
+<code class="example">password = None
+while password != "abc123":
+    password = input("What's the password: ")
+</code>
+<div>Use this kind of loop in situations where you don't know how many times the loop will have to run. In this example, we don't know how many times the password will be entered incorrectly before the user will enter the correct password (ie. abc123). They may enter it correctly on the first try or it may take them 20 tries to enter the correct password.</div>
+</section>
+    
 <div></div>
 <hr><em>[From Dictionaries]</em></hr>
 
