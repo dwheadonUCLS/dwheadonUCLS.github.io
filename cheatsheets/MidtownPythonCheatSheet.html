@@ -239,14 +239,14 @@ age &gt;= 16 <span class='keyword'>and</span> drivers_score >= 80</code>
 <code class="example">primes[2] # returns 5 (the value at index 2 which is the third value)
 </code>
 <div>Note: this in itself doesn't do anything, you'll want to save this in a variable or use it in a calculation</div>
-<div>Note: if the index used is bigger than the size of the array, you will get an IndexError</div>
+<div>Note: if the index used is bigger than the size of the list, you will get an IndexError</div>
 </section>
 
 <section>
 <header>Set the value of an element in a list</header>
-<code class="syntax"><var>arrayName</var>[<span class="placeholder">index</span>] = <span class="placeholder">newValue</span></code>
+<code class="syntax"><var>list_name</var>[<span class="placeholder">index</span>] = <span class="placeholder">newValue</span></code>
 <code class="example">primes[2] = 10</code>
-<div>Note: if the index used is bigger than the size of the array, you will get an IndexError</div>
+<div>Note: if the index used is bigger than the size of the list, you will get an IndexError</div>
 </section>
     
 <section>
@@ -278,7 +278,7 @@ word[4:] # gives us "efgh"</code>
 
 <section>
 <header>Get the size of a list</header>
-<code class="syntax">len(<var>arrayVariable</var>)</code>
+<code class="syntax">len(<var>list_variable</var>)</code>
 <code class="example">len(primes)</code>
 <div>By itself, this doesn't do anything. It's just a value that you can use in another statement.</div>
 </section>
@@ -294,7 +294,6 @@ for num in [9, 2, 6, 1, 7]:
     <div>This is the general syntax for a for-loop. Using a range (as we saw before) simply creates a sequence of numbers that you then go through.</div>
 </section>
 
-<!--
 <section>
 <header>Execute code as long as a condition is True</header>
 <code class="syntax"><span class='keyword'>while</span> <span class='value'>loopCondition</span>:
@@ -305,9 +304,10 @@ for num in [9, 2, 6, 1, 7]:
 while password != "abc123":
     password = input("What's the password: ")
 </code>
-<div>Use this kind of loop in situations where you don't know how many times the loop will have to run. In this example, we don't know how many times the password will be entered incorrectly before the user will enter the correct password (ie. abc123). They may enter it correctly on the first try or it may take them 20 tries to enter the correct password.</div>
+<div>Use this kind of loop in situations where you don't know how many times the loop will have to run. In this example, we don't know how many times the password will be entered incorrectly before the user will enter the correct password (ie. abc123). They may enter it correctly on the first try or it may take them 20 tries to enter the correct password. Note that this is a totally insecure password to use in practice.</div>
 </section>
-    
+
+<!--
 <div></div>
 <hr><em>[From Dictionaries]</em></hr>
 
