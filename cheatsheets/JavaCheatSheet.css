@@ -75,3 +75,7 @@ div {
 ol {
   margin-bottom: 0;
 }
+
+@media print {
+  article {page-break-after: always;}
+}
