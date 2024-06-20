@@ -92,6 +92,41 @@ print(blue)
 <div>A note on operators: generally the operators only work on values of the <em>same</em> type and the result will also be of that type. If you try, for example, to add something to a str[ing] that isn't itself another str[ing] you will get an error.</div>
 </section>
 
+<section>
+<header>Conditionally execute code</header>
+<code class="syntax"><span class='keyword'>if</span> <span class='value'>boolean_expression_1</span>:
+    # Code to run when boolean_expression_1 is True
+<span class='keyword'>elif</span> <span class='value'>boolean_expression_2<span>:
+    # Code to run when boolean_expression_1 is False
+    # AND boolean_expression_2 is True
+<span class='keyword'>else</span>:
+    # Code to run when BOTH conditions are False</code>
+<code class="example">if age >= 20:
+    print("You're old'")
+elif age > 13:
+    print("You're a teenager")
+else:
+    print("You're a little kid")</code>
+<div>The <span class='keyword'>else</span> and the <span class='keyword'>elif</span> parts are optional but the <span class='keyword'>if</span> part is NOT optional</div>
+<div>Also note that the <span class='keyword'>else</span> does <em>NOT</em> have a condition. Its condition is implicitly the opposite of the if's. If you put a condition it will produce a syntax error</div>
+</section>
+
+<section>
+<header>Create a boolean expression</header>
+<code class="syntax"># Any or combination of the following
+boolean value or boolean variable
+function that returns a boolean value
+comparison operation
+boolean operation</code>
+<code class="example"># Mirroring the left 
+True
+math.isclose(8.9, 9.1)
+age &gt;= 16
+age &gt;= 16 <span class='keyword'>and</span> drivers_score >= 80</code>
+<div>Comparison operators: &nbsp; &lt; &nbsp; &lt;= &nbsp; == &nbsp; != &nbsp; &gt;= &nbsp; &gt;</div>
+<div>Boolean operators: <span class='keyword'>and</span>, <span class='keyword'>or</span>, <span class='keyword'>not</span></div>
+</section>
+
 <!--
 <section>
     <header>Call a <span class="method">method</span> on a "thing"</header>
@@ -194,43 +229,7 @@ word[-1] # also gives us "o"</code>
 <div>Note: if the index used is bigger than the size of the string, you will get an IndexError</div>
 <div>Note: By itself, the bracket notation doesn't do anything. You will want to remember the value that you get (e.g. print it or use it in some way)</div>
 </section>
--->    
 
-<!--
-<section>
-<header>Conditionally execute code</header>
-<code class="syntax"><span class='keyword'>if</span> <span class='value'>boolean_expression_1</span>:
-    # Code to run when boolean_expression_1 is True
-<span class='keyword'>elif</span> <span class='value'>boolean_expression_2<span>:
-    # Code to run when boolean_expression_1 is False
-    # AND boolean_expression_2 is True
-<span class='keyword'>else</span>:
-    # Code to run when BOTH conditions are False</code>
-<code class="example">if age >= 20:
-    print("You're old'")
-elif age > 13:
-    print("You're a teenager")
-else:
-    print("You're a little kid")</code>
-<div>The <span class='keyword'>else</span> and the <span class='keyword'>elif</span> parts are optional but the <span class='keyword'>if</span> part is NOT optional</div>
-<div>Also note that the <span class='keyword'>else</span> does <em>NOT</em> have a condition. Its condition is implicitly the opposite of the if's. If you put a condition it will produce a syntax error</div>
-</section>
-
-<section>
-<header>Create a boolean expression</header>
-<code class="syntax"># Any or combination of the following
-boolean value or boolean variable
-function that returns a boolean value
-comparison operation
-boolean operation</code>
-<code class="example"># Mirroring the left 
-True
-math.isclose(8.9, 9.1)
-age &gt;= 16
-age &gt;= 16 <span class='keyword'>and</span> drivers_score >= 80</code>
-<div>Comparison operators: &nbsp; &lt; &nbsp; &lt;= &nbsp; == &nbsp; != &nbsp; &gt;= &nbsp; &gt;</div>
-<div>Boolean operators: <span class='keyword'>and</span>, <span class='keyword'>or</span>, <span class='keyword'>not</span></div>
-</section>
 
 <section>
 <header>Create a list with pre-determined values</header>
