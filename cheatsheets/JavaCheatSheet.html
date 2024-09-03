@@ -6,7 +6,7 @@
 <header>Java Cheatsheet</header>
 
 <p>The Java syntax found here will be used <em>continually</em> throughout this course. It should be committed to memory. If you have to constantly be referring back to it, the assignments will take you twice as long to do and you will lose precious time. Even though this cheatsheet will always be available to you (except on a test), it would be good to maintain your own version (written out) in your notes for easier access and to help you memorize the contents. <strong>Extra credit</strong> will be given for maintaining your own handwritten version. Only the syntax part is required but you may find it useful to write out the examples as well.</p>
-
+<!--
 <hr style="page-break-before: always;"><em>[From Basic Commands]</em></hr>
 
 <section>
@@ -537,71 +537,6 @@ if (p instanceof Employee) {
   The <span class="keyword">@Override</span> notation isn't strictly necessary but it's <em>very</em> good practice... ahem.
 </div>
 </section>
-<!-- Not really new syntax...
-<section>
-<header>Overload a <span class="method">method</span></header>
-<div>Overloading is the practice of providing multiple methods with the same name but with different parameters (number or type). Java will automatically choose to run the version of the method that corresponds to the parameters that are given.</div>
-<code class="example">public class Thing {
-    private int position = 0;
-    public void move() {
-      this.position++;
-    }
-    public void move(int distance) {
-      this.position += distance;
-    }
-}</code>
-<code class="example">public class Runner {
-    public static void main(String[] args) {
-        Thing t = new Thing();
-        // this runs the first move
-        t.move();
-        // this runs the second move
-        t.move(5)
-    }
-}</code>
-<div>Note: there isn't any new syntax here but this is an important concept you should know about</div>
-</section>
- -->
-<!--
-<section>
-<header>Send back a value from a method (inside a method)</header>
-<code class="syntax"><span class="keyword">return</span> <span class="value">value</span>;</code>
-<code class="example">return Math.PI * r * r;</code>
-<div>Note: the method will immediately exit and no other code inside the method will be executed.</div>
-</section>
-
-<section>
-<header>Allow access to information in an object instance</header>
-<div>
-  Since the instance variable is private, you need a public accessor method in the class
-</div>
-<code class="syntax"><span class="keyword">public</span> <span class="type">returnType</span> <span class="method">accessorMethodName</span>() {
-    <span class="keyword">return</span> <span class="keyword">this</span>.<var>instanceVariableName;
-}</code>
-<code class="example">// Only name is available because age is sensitive information
-public String getName() {
-    return this.myName;
-}</code>
-</section>
-
-<section>
-<header>Get information from an object instance</header>
-<code class="syntax"><span class="type">returnedType</span> <var>variableName</var> = <var>objectReference</var>.<span class="method">accessorMethodName</span>();</code>
-<code class="example">// Assuming you have an empoyee object called e
-String eName = e.getName();
-System.out.println("The employee's name is " + eName);</code>
-</section>
-
-<section>
-<header>Allow changing information in an object instance</header>
-<code class="syntax"><span class="keyword">public</span> <span class="keyword">void</span> <span class="method">methodName</span>(<span class="type">InstanceType</span> <var>pName</var>) {
-    <span class="keyword">this</span>.<var>instanceVariableName = <var>pName</var>;
-}</code>
-<code class="example">public void setName(String newName) {
-    this.name = newName;
-}</code>
-</section>
--->
 
 <div></div>
 <hr style="page-break-before: always;"><em>[From the Abstract classes and Interfaces lesson]</em></hr>
@@ -758,7 +693,6 @@ matrix[0].length // num columns</code>
 <div>Using the first row to determine how wide the array is assumes that the array is not jagged, but this is normally the case.</div>
 </section>
     
-<!--
 <div></div>
 <hr style="page-break-before: always;"><em>[Testing Notes (FYI only: not on the AP exam, won't be tested in this class)]</em></hr>
 
@@ -820,7 +754,6 @@ public class TimeRunner {
 }</code>
 </section>
   
--->
 <div></div>
 <hr style="page-break-before: always;"><em>[From the Java Standard Collections lesson]</em></hr>
 
@@ -865,7 +798,8 @@ for (Integer num : numbers) {
   System.out.print(num * num + ", ");
 }</code>
 <div>The collection can be anything that implements the <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html">Iterable</a> interface which includes arrays and all the Java standard collections (among other things)</div>
-</section>   
+</section>  
+--> 
 <div>&nbsp;</div>
 <div>&nbsp;</div>
 </body>
