@@ -320,7 +320,6 @@ public static <span class="type">returnType</span> <span class="method">methodNa
 </section>
 
 
-<!--
 <div></div>
 <hr style="page-break-before: always;"><em>[From the Exceptions lesson]</em></hr>
 
@@ -345,22 +344,9 @@ public static <span class="type">returnType</span> <span class="method">methodNa
 </section>
 
 <section>
-<header>Pass an exception on (to whomever called this method)</header>
-<code class="syntax">public void myMethod() <span class='keyword'>throws</span> <span class="type">ExceptionType</span> {
-    if (<span class='value'>problemSituation == true</span>) {
-        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="type">ExceptionType</span>("exception message");
-    }
-}</code>
-<code class="example">public void doDangerousStuff() throws DangerousException {
-    if (! goodSituation) {
-        throw new DangerousException();
-    }
-}</code>
-</section>
-
-<section>
     <header>Read data from a file</header>
-    <code class="syntax">import java.io.File;
+    <div>This is just a practical example of handling an exception</div>
+    <code class="example">import java.io.File;
 import java.util.Scanner;
 // ...        
 // inside a method (e.g. main)
@@ -377,7 +363,22 @@ while (s.hasNextLine()) {
     // do something with the data
 }</code>
 </section>
+
+<section>
+<header>Pass an exception on (to whomever called this method)</header>
+<code class="syntax">public void myMethod() <span class='keyword'>throws</span> <span class="type">ExceptionType</span> {
+    if (<span class='value'>problemSituation == true</span>) {
+        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="type">ExceptionType</span>("exception message");
+    }
+}</code>
+<code class="example">public void doDangerousStuff() throws DangerousException {
+    if (! goodSituation) {
+        throw new DangerousException();
+    }
+}</code>
+</section>
   
+<!--
 
 <div></div>
 <hr style="page-break-before: always;"><em>[From the Instance Variables lesson]</em></hr>
