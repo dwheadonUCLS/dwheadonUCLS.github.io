@@ -8,64 +8,161 @@
 <p>The Python syntax found here will be used <em>continually</em> throughout this course. It should be committed to memory. If you have to constantly be referring back to it, the assignments will take you twice as long to do and you will lose precious time. Even though this cheatsheet will always be available to you (except for quizzes and tests), it would be good to maintain your own version (written out) in your notes for easier access and to help you memorize the contents.</p>
 
 <article>
-<div></div>
-<hr><em>[From Talking to your computer]</em></hr>
+    <div></div>
+    <hr><em>[From Module 1: Write your first program]</em></hr>
+    <section>
+        <header>Create a string value</header>
+        <code class="syntax"><span class='value'>"characters enclosed in either single or double quotes"</span></code>
+        <code class="example">"hello"</code>
+        <div>The string will end with whichever kind of quote you begin with so make sure your enclosed characters don't contain that kind of quote.</div>
+    </section>
+    <section>
+        <header>Call a function</header>
+        <code class="syntax"><span class="method">function_name</span>(<span class='value'>parameter1_value</span>, <span class='value'>parameter2_value</span>)</code>
+        <code class="example">print("hello")</code>
+        <div>Not all functions take parameters but you still need the parenthesis. Some functions take multiple parameters: you separate them with a comma</div>
+    </section>
+    <section>
+        <header>Create a <var>variable</var> or give an existing one a new value</header>
+        <div>Variables allow us to "remember" or "store" a value so that we can use it later in our program.</div>
+        <code class="syntax"><var>variable_name</var> = <span class="value">initial_value</span></code>
+        <code class="example">pi = 3.14</code>
+        <div>Note: the variable <em>must</em> be on the left side</div>
+    </section>
+    
+    <section>
+    <header>Naming rules for variables</header>
+    <ol>
+    <li>Cannot be a reserved <span class="keyword">keyword</span></li>
+    <li>Cannot <em>start</em> with a number</li>
+    <li>No punctuation, delimeters, or special characters</li>
+    <li>No spaces</li>
+    </ol>
+    <div><em>Recommended</em> to use snake case</div>
+    </section>
+    
+    <section>
+    <header>Use Snake Case</header>
+    <code class="syntax">put_underscore_between_words</code>
+    <div>Use when appropriate: when the purpose of the variable can't be summarized in a single word</div>
+    </section>
+</article>    
+<!--
+<article>
+    <div></div>
+    <hr><em>[From Module 2: Calculations and Turtle]</em></hr>
+    <section>
+        <header>Values can have different <span class="type">Types</span></header>
+        <table>
+            <tr><th><span class="type">Type</span></th><th>Description</th><th>Example(s)</th><th>Operators</th></th>
+            <tr><td><span class="type">int</span></td><td>integers</td><td><pre>8, -3, 100000</pre></td><td><pre>+ - * / % **</pre></td></tr>
+            <tr><td><span class="type">float</span></td><td>numbers with decimal points</td><td><pre>3.14159</pre></td><td><pre>+ - * / **</pre></td></tr>
+            <tr><td><span class="type">bool</span></td><td><span class="keyword">True</span> or <span class="keyword">False</span></td><td><span class="keyword">True</span>, <span class="keyword">False</span></td><td><pre>and or not</pre> </td></tr>
+            <tr><td><span class="type">str</span></td><td>sequence of characters</td><td><pre>'hello', "3.14"</pre></td><td><pre>+ *</pre></td></tr>
+        </table>
+        <div>The type of the value / variable will determine the types of operations that you can perform on it. You cannot, for example, divide a string. What would "hello" / 10 be? That doesn't make sense.</div>
+        <div>Even if it only contains numerals, if it's in quotes it's still a string: "20" / 10 won't work either because it's the string "two zero" not the number twenty.</div>
+    </section>
+    <section>
+        <header>Import everything from a module</header>
+        <code class="syntax"><span class='keyword'>from</span> <span class="placeholder">module_name</span> <span class='keyword'>import</span> *</code>
+        <code class="example">from turtle import *</code>
+    </section>
+</article>    
 
-<section>
-    <header>Create a <var>variable</var> or give an existing one a new value</header>
-    <div>Variables allow us to "remember" or "store" a value so that we can use it later in our program.</div>
-    <code class="syntax"><var>variable_name</var> = <span class="value">initial_value</span></code>
-    <code class="example">pi = 3.14</code>
-    <div>Note: the variable <em>must</em> be on the left side</div>
-</section>
+<article>
+    <div></div>
+    <hr><em>[From Module 3: Asking questions and making decisions]</em></hr>
+    <section>
+        <header>Call a function that returns a value</header>
+        <div>Some functions return a value. There's no point to calling these kinds of functions <em>unless</em> you actually do something with the results. Usually this will involve saving the value in a variable which you can then use later in your program. The function call will get replaced by the value that it returns.</div>
+        <code class="syntax"><var>variable_name</var> = <span class="method">function_name</span>(<span class='value'>parameter1_value</span>, <span class='value'>parameter2_value</span>)</code>
+        <div>Example: calling a function that returns a value (the <em>letters</em> that the user typed) and saves it in a variable (so we can use it later)</div>
+        <code class="example">name = input("What's your name: ")</code>
+    </section>
+    <section>
+        <header>f-strings...</header>
+    </section>
+    <section>
+        <header>Conditionally execute code</header>
+        <code class="syntax"><span class='keyword'>if</span> <span class='value'>boolean_expression_1</span>:
+            # Code to run when boolean_expression_1 is True
+        <span class='keyword'>elif</span> <span class='value'>boolean_expression_2<span>:
+            # Code to run when boolean_expression_1 is False
+            # AND boolean_expression_2 is True
+        <span class='keyword'>else</span>:
+            # Code to run when BOTH conditions are False</code>
+        <code class="example">if age >= 20:
+    print("You're old'")
+elif age > 13:
+    print("You're a teenager")
+else:
+    print("You're a little kid")</code>
+        <div>The <span class='keyword'>else</span> and the <span class='keyword'>elif</span> parts are optional but the <span class='keyword'>if</span> part is NOT optional</div>
+        <div>Also note that the <span class='keyword'>else</span> does <em>NOT</em> have a condition. Its condition is implicitly the opposite of the if's. If you put a condition it will produce a syntax error</div>
+    </section>
+</article>    
 
-<section>
-<header>Naming rules for variables</header>
-<ol>
-<li>Cannot be a reserved <span class="keyword">keyword</span></li>
-<li>Cannot <em>start</em> with a number</li>
-<li>No punctuation, delimeters, or special characters</li>
-<li>No spaces</li>
-</ol>
-<div><em>Recommended</em> to use snake case</div>
-</section>
+<article>
+    <div></div>
+    <hr><em>[From Module 4: Decisions with numbers]</em></hr>
+    <section>
+        <header>Create a boolean expression</header>
+        <code class="syntax"># Any or combination of the following
+boolean value or boolean variable
+function that returns a boolean value
+comparison operation
+boolean operation</code>
+<code class="example"># Mirroring the left 
+True
+math.isinfinite(x)
+age &gt;= 16
+age &gt;= 16 <span class='keyword'>and</span> drivers_score >= 80</code>
+        <div>Comparison operators: &nbsp; &lt; &nbsp; &lt;= &nbsp; == &nbsp; != &nbsp; &gt;= &nbsp; &gt;</div>
+        <div>Boolean operators: <span class='keyword'>and</span>, <span class='keyword'>or</span>, <span class='keyword'>not</span></div>
+    </section>
+</article>    
 
-<section>
-<header>Use Snake Case</header>
-<code class="syntax">put_underscore_between_words</code>
-<div>Use when appropriate: when the purpose of the variable can't be summarized in a single word</div>
-</section>
+<article>
+    <div></div>
+    <hr><em>[From Module 5: More decisions]</em></hr>
+</article>    
 
-<section>
-    <header>Call a function</header>
-    <code class="syntax"><span class="method">function_name</span>(<span class='value'>parameter1_value</span>, <span class='value'>parameter2_value</span>)</code>
-    <code class="example">print("hello")</code>
-    <div>Not all functions take parameters but you still need the parenthesis. Some functions take multiple parameters: you separate them with a comma</div>
-</section>
-<section>
-    <header>Call a function that returns a value</header>
-    <div>Some functions return a value. There's no point to calling these kinds of functions <em>unless</em> you actually do something with the results. Usually this will involve saving the value in a variable which you can then use later in your program. The function call will get replaced by the value that it returns.</div>
-    <code class="syntax"><var>variable_name</var> = <span class="method">function_name</span>(<span class='value'>parameter1_value</span>, <span class='value'>parameter2_value</span>)</code>
-    <div>Example: calling a function that returns a value (the <em>letters</em> that the user typed) and saves it in a variable (so we can use it later)</div>
-    <code class="example">name = input("What's your name: ")</code>
-</section>
-</article>
+<article>
+    <div></div>
+    <hr><em>[From Module 6: Loopy loops]</em></hr>
+</article>    
+
+<article>
+    <div></div>
+    <hr><em>[From Module 7: Data representation]</em></hr>
+</article>    
+
+<article>
+    <div></div>
+    <hr><em>[From Module 8: Functions, fill, and pizza]</em></hr>
+</article>    
+
+<article>
+    <div></div>
+    <hr><em>[From Module 9: More on functions]</em></hr>
+</article>    
+
+<article>
+    <div></div>
+    <hr><em>[From Module 10: x and y coordinates]</em></hr>
+</article>    
+-->
 <!--
 <article>
 <div></div>
+<hr><em>[From Talking to your computer]</em></hr>
+
+</article>
+
+<article>
+<div></div>
 <hr><em>[From Calculating things]</em></hr>
-<section>
-    <header>Values can have different <span class="type">Types</span></header>
-    <table>
-        <tr><th><span class="type">Type</span></th><th>Description</th><th>Example(s)</th><th>Operators</th></th>
-        <tr><td><span class="type">int</span></td><td>integers</td><td><pre>8, -3, 100000</pre></td><td><pre>+ - * / % **</pre></td></tr>
-        <tr><td><span class="type">float</span></td><td>numbers with decimal points</td><td><pre>3.14159</pre></td><td><pre>+ - * / **</pre></td></tr>
-        <tr><td><span class="type">bool</span></td><td><span class="keyword">True</span> or <span class="keyword">False</span></td><td><span class="keyword">True</span>, <span class="keyword">False</span></td><td><pre>and or not</pre> </td></tr>
-        <tr><td><span class="type">str</span></td><td>sequence of characters</td><td><pre>'hello', "3.14"</pre></td><td><pre>+ *</pre></td></tr>
-    </table>
-    <div>The type of the value / variable will determine the types of operations that you can perform on it. You cannot, for example, divide a string. What would "hello" / 10 be? That doesn't make sense.</div>
-    <div>Even if it only contains numerals, if it's in quotes it's still a string: "20" / 10 won't work either because it's the string "two zero" not the number twenty.</div>
-</section>
 <section>
     <header>Built-in functions</header>
     <div>There are a bunch of built-in functions that you learn here but the "syntax" for all functions is the same (see "Call a function..." sections above) so they won't be covered here.
@@ -83,41 +180,6 @@ number = int(numerals)</code>
 <article>
 <div></div>
 <hr><em>[From Making decisions]</em></hr>
-
-<section>
-<header>Conditionally execute code</header>
-<code class="syntax"><span class='keyword'>if</span> <span class='value'>boolean_expression_1</span>:
-    # Code to run when boolean_expression_1 is True
-<span class='keyword'>elif</span> <span class='value'>boolean_expression_2<span>:
-    # Code to run when boolean_expression_1 is False
-    # AND boolean_expression_2 is True
-<span class='keyword'>else</span>:
-    # Code to run when BOTH conditions are False</code>
-<code class="example">if age >= 20:
-    print("You're old'")
-elif age > 13:
-    print("You're a teenager")
-else:
-    print("You're a little kid")</code>
-<div>The <span class='keyword'>else</span> and the <span class='keyword'>elif</span> parts are optional but the <span class='keyword'>if</span> part is NOT optional</div>
-<div>Also note that the <span class='keyword'>else</span> does <em>NOT</em> have a condition. Its condition is implicitly the opposite of the if's. If you put a condition it will produce a syntax error</div>
-</section>
-
-<section>
-<header>Create a boolean expression</header>
-<code class="syntax"># Any or combination of the following
-boolean value or boolean variable
-function that returns a boolean value
-comparison operation
-boolean operation</code>
-<code class="example"># Mirroring the left 
-True
-math.isinfinite(x)
-age &gt;= 16
-age &gt;= 16 <span class='keyword'>and</span> drivers_score >= 80</code>
-<div>Comparison operators: &nbsp; &lt; &nbsp; &lt;= &nbsp; == &nbsp; != &nbsp; &gt;= &nbsp; &gt;</div>
-<div>Boolean operators: <span class='keyword'>and</span>, <span class='keyword'>or</span>, <span class='keyword'>not</span></div>
-</section>
 </article>
 <article>
 <div></div>
