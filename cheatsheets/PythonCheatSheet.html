@@ -47,7 +47,7 @@
     <div>Use when appropriate: when the purpose of the variable can't be summarized in a single word</div>
     </section>
 </article>    
-<!--
+
 <article>
     <div></div>
     <hr><em>[From Module 2: Calculations and Turtle]</em></hr>
@@ -64,12 +64,27 @@
         <div>Even if it only contains numerals, if it's in quotes it's still a string: "20" / 10 won't work either because it's the string "two zero" not the number twenty.</div>
     </section>
     <section>
-        <header>Import everything from a module</header>
+        <header>Import everything from <i>inside</i> a module</header>
         <code class="syntax"><span class='keyword'>from</span> <span class="placeholder">module_name</span> <span class='keyword'>import</span> *</code>
         <code class="example">from turtle import *</code>
     </section>
+    <section>
+        <header>Import a module (itself)</header>
+        <code class="syntax"><span class='keyword'>import</span> <span class="placeholder">module_name</span>
+<span class="placeholder">module_name</span>.<span class="placeholder">function_name(<span class="placeholder">required_parameters</span>)</span>
+</code>
+        <code class="example">import turtle
+turtle.forward(100)</code>
+    </section>
+    <section>
+        <header>Get information about a module</header>
+        <div>Note that this assumes the module has already been imported</div>
+        <code class="syntax"><span class='keyword'>help</span>(<span class="placeholder">module_name</span>)</code>
+        <code class="example">help(turtle)</code>
+    </section>
 </article>    
 
+<!--
 <article>
     <div></div>
     <hr><em>[From Module 3: Asking questions and making decisions]</em></hr>
