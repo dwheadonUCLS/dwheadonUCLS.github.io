@@ -84,40 +84,45 @@ turtle.forward(100)</code>
     </section>
 </article>    
 
-<!--
 <article>
     <div></div>
     <hr><em>[From Module 3: Asking questions and making decisions]</em></hr>
     <section>
         <header>Call a function that returns a value</header>
         <div>Some functions return a value. There's no point to calling these kinds of functions <em>unless</em> you actually do something with the results. Usually this will involve saving the value in a variable which you can then use later in your program. The function call will get replaced by the value that it returns.</div>
-        <code class="syntax"><var>variable_name</var> = <span class="method">function_name</span>(<span class='value'>parameter1_value</span>, <span class='value'>parameter2_value</span>)</code>
-        <div>Example: calling a function that returns a value (the <em>letters</em> that the user typed) and saves it in a variable (so we can use it later)</div>
+        <code class="syntax"><var>variable_name</var> = <span class="method">function_name</span>(<span class='value'>required</span>, <span class='value'>parameters</span>)</code>
         <code class="example">name = input("What's your name: ")</code>
+        <div>This is really just the combination of two syntax rules we've already seen (creating variables and calling functions)</div>
     </section>
     <section>
-        <header>f-strings...</header>
+        <header>f-strings</header>
+        <div>f-strings are used almost exclusively when you want to print something out that invludes the values of some (one or more) varaibles Formatted a certain way.</div>
+        <code class="syntax">print(f'<span class='placeholder'>words you want to print</span> {<var>variable_name</var>} <span class='placeholder'>other words you want to print</span>')</code>
+        <div>There are all kinds of fancy ways to format the values of the variables. See the <a href="https://docs.python.org/3/tutorial/inputoutput.html">documentation</a> for more details.</div>
     </section>
     <section>
-        <header>Conditionally execute code</header>
-        <code class="syntax"><span class='keyword'>if</span> <span class='value'>boolean_expression_1</span>:
-            # Code to run when boolean_expression_1 is True
-        <span class='keyword'>elif</span> <span class='value'>boolean_expression_2<span>:
-            # Code to run when boolean_expression_1 is False
-            # AND boolean_expression_2 is True
-        <span class='keyword'>else</span>:
-            # Code to run when BOTH conditions are False</code>
-        <code class="example">if age >= 20:
-    print("You're old'")
+        <header>Decisions with two options</header>
+        <code class="syntax"><span class='keyword'>if</span> <span class='value'>boolean_expression</span>:
+    # Code to run when boolean_expression is True<!--
+<span class='keyword'>elif</span> <span class='value'>boolean_expression_2<span>:
+    # Code to run when boolean_expression_1 is False
+    # AND boolean_expression_2 is True
+-->
+<span class='keyword'>else</span>:
+    # Code to run when boolean_expression is False</code>
+<code class="example">if age >= 18:
+    print("You're legally an adult'")<!--
 elif age > 13:
-    print("You're a teenager")
+    print("You're a teenager")-->
 else:
-    print("You're a little kid")</code>
-        <div>The <span class='keyword'>else</span> and the <span class='keyword'>elif</span> parts are optional but the <span class='keyword'>if</span> part is NOT optional</div>
-        <div>Also note that the <span class='keyword'>else</span> does <em>NOT</em> have a condition. Its condition is implicitly the opposite of the if's. If you put a condition it will produce a syntax error</div>
+    print("You're just a little kid")</code>
+        <div>The <span class='value'>boolean_expression</span> must evaluate to True or False. If it doesn't (e.g 3 + 5) it will produce a TypeError.</div>
+        <div>The <span class='keyword'>else</span> <!--and the <span class='keyword'>elif</span> parts are--> part is optional but the <span class='keyword'>if</span> part is NOT optional (you can't have an else without an if)</div>
+        <div>Also note that the <span class='keyword'>else</span> does <em>NOT</em> have a condition. Its condition is implicitly the opposite of the if's. If you try to put a condition it will produce a syntax error.</div>
     </section>
 </article>    
 
+<!--
 <article>
     <div></div>
     <hr><em>[From Module 4: Decisions with numbers]</em></hr>
