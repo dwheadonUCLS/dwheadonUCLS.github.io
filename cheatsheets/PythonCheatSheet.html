@@ -122,7 +122,7 @@ else:
     </section>
 </article>    
 
-<!--
+
 <article>
     <div></div>
     <hr><em>[From Module 4: Decisions with numbers]</em></hr>
@@ -146,13 +146,72 @@ age &gt;= 16 <span class='keyword'>and</span> drivers_score >= 80</code>
 <article>
     <div></div>
     <hr><em>[From Module 5: More decisions]</em></hr>
+    <section>
+        <header>Decisions with multiple options</header>
+        <code class="syntax"><span class='keyword'>if</span> <span class='value'>boolean_expression_1</span>:
+    # Code to run when boolean_expression_1 is True
+<span class='keyword'>elif</span> <span class='value'>boolean_expression_2<span>:
+    # Code to run when boolean_expression_1 is False
+    # AND boolean_expression_2 is True
+<span class='keyword'>else</span>:
+    # Code to run only when ALL previous boolean_expressions are False</code>
+<code class="example">if age >= 20:
+    print("You're old'")
+elif age > 13:
+    print("You're a teenager")
+else:
+    print("You're just a little kid")</code>
+        <div>The <span class='value'>boolean_expression</span>s must evaluate to True or False. If they don't (e.g 3 + 5) it will produce a TypeError.</div>
+        <div>The <span class='keyword'>else</span> and <span class='keyword'>elif</span> parts are optional but the <span class='keyword'>if</span> part is NOT optional (you can't have an <span class='keyword'>else</span> without an <span class='keyword'>if</span>)</div>
+        <div>Also note that the <span class='keyword'>else</span> does <em>NOT</em> have a condition. Its condition is implicitly the opposite of the <span class='keyword'>if</span>'s. If you try to put a condition after an <span class='keyword'>else</span> it will produce a syntax error.</div>
+    </section>
+
+    <section>
+        <header>Boolean expression with strings</header>
+        <code class="syntax">"some string" <span class='keyword'>in</span> "some other string"</code>
+        <code class="example">"cal" in "supercalifragalistic"</code>
+        <div>This evaluates to True or False and can therefore be used in a conditional (if-statement)</div>
+    </section>
+    <section>
+        <header>Call a <span class="method">method</span> on a "thing"</header>
+        <div>Methods are like functions except that you have to call them on a thing. The thing could be an actual value or a variable that represents that value.</div>
+        <code class="syntax">thing.methodName(required, parameter, values)</code>
+        <code class="example">"hello".upper()
+word = "hello"
+word.upper()</code>
+        <div>Note: not all "things" have methods that can be called on them. It depends on the type of the thing. For strings, the methods available can be found in the <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">str documentation</a>.</div>
+        <div>Note: in many cases the method won't actually change the value. In such cases, it will return a value which you have to use somehow (e.g. print, save in a variable).</div>
+    </section>
 </article>    
 
 <article>
     <div></div>
     <hr><em>[From Module 6: Loopy loops]</em></hr>
+    <section>
+        <header>for loop</header>
+        <div>For going through each of the items in a sequence</div>
+        <code class="syntax"><span class='keyword'>for</span> <span class='placeholder'>item_name</span> in <span class='placeholder'>sequence</span>:
+    # Code to run for each item in the sequence</code>
+        <code class="example">for letter in "bunch of letters":
+    print(letter)</code>
+        <div>The <span class='placeholder'>item_name</span> can be used to refer to the item in the sequence that you're currently on</div>
+        <div>Any code inside (indented) under the for loop will be run multiple times. Code outside the loop (unindented before or after) will only be run once.</div>
+    </section>
+            
+    <section>
+        <header>Execute code a specific number of times</header>
+        <code class="syntax"><span class='keyword'>for</span> <span class='placeholder'>number_name</span> in <span class="method">range</span>(<span class='placeholder'>parameters</span>):
+    # Code to run for each number in the sequence</code>
+        <code class="example"># Prints out the numbers from 0 to 99
+for num in range(100):
+    print(num)</code>
+        <div>With 1 parameter, <span class="method">range</span>(<span class='placeholder'>num1</span>) produces a sequence of numbers from 0 up to but <em>not including</em> num1</div>
+        <div>With 2 parameters, <span class="method">range</span>(<span class='placeholder'>num1</span>, <span class='placeholder'>num2</span>) produces a sequence of numbers from num1 up to but <em>not including</em> num2</div>
+        <div>With 3 parameters, <span class="method">range</span>(<span class='placeholder'>num1</span>, <span class='placeholder'>num2</span>, <span class='placeholder'>num3</span>) produces a sequence of numbers from num1 up to but <em>not including</em> num2 going up (or down if negative) by num3</div>
+    </section>
 </article>    
 
+<!--
 <article>
     <div></div>
     <hr><em>[From Module 7: Data representation]</em></hr>
@@ -213,16 +272,6 @@ number = int(numerals)</code>
     <div>Note: This doesn't actually <em>do</em> anything but returns <span class="keyword">true</span> / <span class="keyword">false</span> which can be used in an if statement (for example)</div>
 </section>
 
-<section>
-    <header>Call a <span class="method">method</span> on a "thing"</header>
-    <div>Methods are like functions except that you have to call them on a thing. The thing could be an actual value or a variable that represents that value.</div>
-    <code class="syntax">thing.methodName(required, parameter, values)</code>
-    <code class="example">"hello".upper()
-word = "hello"
-word.upper()</code>
-    <div>Note: not all "things" have methods that can be called on them. It depends on the type of the thing. For strings, the methods available can be found in the <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">str documentation</a>.</div>
-    <div>Note: in many cases the method won't actually change the value. In such cases, it will return a value which you have to use somehow (e.g. print, save in a variable).</div>
-</section>
     
 <section>
 <header>Get an item at a specific position in a sequence</header>
@@ -242,27 +291,6 @@ word[-1] # also gives us "o"</code>
 <div></div>
 <hr><em>[From Repeating things]</em></hr>
 
-<section>
-<header>for loop</header>
-<code class="syntax"><span class='keyword'>for</span> <span class='placeholder'>itemName</span> in <span class='placeholder'>sequence</span>:
-    # Code to run for each item in the sequence
-</code>
-<code class="example">for letter in "bunch of letters":
-    print(letter)</code>
-</section>
-        
-<section>
-<header>Execute code a specific number of times</header>
-<code class="syntax"><span class='keyword'>for</span> <span class='placeholder'>numberName</span> in <span class="method">range</span>(<span class='placeholder'>parameters</span>):
-    # Code to run for each number in the sequence
-</code>
-<code class="example"># Prints out the numbers from 0 to 99
-for num in range(100):
-    print(num)</code>
-<div>With 1 parameter, range(num1) produces a sequence of numbers from <em>0</em> up to but <em>not including</em> num1</div>
-<div>With 2 parameters, range(num1, num2) produces a sequence of numbers from <em>num1</em> up to but <em>not including</em> num2</div>
-<div>With 3 parameters, range(num1, num2, num3) produces a sequence of numbers from <em>num1</em> up to but <em>not including</em> num2 going up (or down if negative) by num3</div>
-</section>
 
 <section>
 <header>Slicing syntax for sequences (including strings)</header>
