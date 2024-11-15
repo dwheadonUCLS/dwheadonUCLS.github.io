@@ -170,8 +170,8 @@ else:
         <header>Boolean expression with strings</header>
         <code class="syntax">"some string" <span class='keyword'>in</span> "some other string"</code>
         <code class="example">"cal" in "supercalifragalistic"</code>
-        <div>This evaluates to True or False and can therefore be used in a conditional (if-statement)</div>
-    </section>
+        <div>This evaluates to True or False and can therefore be used in a conditional (like an if-statement)</div>
+    </section>    
     <section>
         <header>Call a <span class="method">method</span> on a "thing"</header>
         <div>Methods are like functions except that you have to call them on a thing. The thing could be an actual value or a variable that represents that value.</div>
@@ -211,17 +211,42 @@ for num in range(100):
     </section>
 </article>    
 
+<article>
+    <div></div>
+    <hr><em>[From Module 7: Data representation and indexing]</em></hr>
+
+    <section>
+        <header>Get an item at a specific position in a sequence</header>
+        <div>For strings, this gives you the specific character at that position</div>
+        <code class="syntax"><var>string</var>[<span class="placeholder">index</span>]</code>
+        <code class="example">word = "hello"
+word[0] # gives us "h"
+word[4] # gives us "o"  
+word[len(word) - 1] # also gives us "o"
+word[-1] # also gives us "o"</code>
+        <div>Note: indecies are zero-based</div>
+        <div>Note: if the index used is bigger than the size of the string, you will get an IndexError</div>
+        <div>Note: By itself, the bracket notation doesn't do anything. You will want to <i>remember</i> the value that you get (so you can use it later) or do something with it immediately (e.g. print it out)</div>
+    </section>
+</article>    
+
+<article>
+    <div></div>
+    <hr><em>[From Modules 8, 9, and 10: Functions]</em></hr>
+    <section>
+        <header>Create your own function</header>
+        <code class="syntax">def <span class="function">function_name</span>(<span class="method">param_name_1</span>, <span class="method">param_name_2</span>):
+    # Code to run (indented) when the method is called
+    # Most functions will want to <span class='keyword'>return</span> something
+    # Parameter values are refered to using the name given above</code>
+        <code class="example">def times_2(num):
+    return num * 2</code>
+        <div>Convention: make methods have an <em>action (verb)</em> name</div>
+        <div>Note: you call your own functions in the same way as you call the built-in ones (e.g. print, input, etc.)</div>
+    </section>
+</article>    
+
 <!--
-<article>
-    <div></div>
-    <hr><em>[From Module 7: Data representation]</em></hr>
-</article>    
-
-<article>
-    <div></div>
-    <hr><em>[From Module 8: Functions, fill, and pizza]</em></hr>
-</article>    
-
 <article>
     <div></div>
     <hr><em>[From Module 9: More on functions]</em></hr>
@@ -232,6 +257,13 @@ for num in range(100):
     <hr><em>[From Module 10: x and y coordinates]</em></hr>
 </article>    
 -->
+
+
+
+
+
+
+
 <!--
 <article>
 <div></div>
@@ -262,30 +294,7 @@ number = int(numerals)</code>
 </article>
 <article>
 <div></div>
-<hr><em>[From Manipulating strings]</em></hr>
-
-<section>
-    <header>The <span class="keyword">in</span> operator</header>
-    <div>This is a special operator that can only be used on two strings (or variables that hold strings)</div>
-    <code class="syntax">string1 <span class="keyword">in</span> string2</code>
-    <code class="example">"hello" in "hello world"</code>
-    <div>Note: This doesn't actually <em>do</em> anything but returns <span class="keyword">true</span> / <span class="keyword">false</span> which can be used in an if statement (for example)</div>
-</section>
-
-    
-<section>
-<header>Get an item at a specific position in a sequence</header>
-<div>For strings, this gives you the specific character at that position</div>
-<code class="syntax"><var>string</var>[<span class="placeholder">index</span>]</code>
-<code class="example">word = "hello"
-word[0] # gives us "h"
-word[4] # gives us "o"  
-word[len(word) - 1] # also gives us "o"
-word[-1] # also gives us "o"</code>
-<div>Note: indecies are zero-based</div>
-<div>Note: if the index used is bigger than the size of the string, you will get an IndexError</div>
-<div>Note: By itself, the bracket notation doesn't do anything. You will want to remember the value that you get (e.g. print it or use it in some way)</div>
-</section>
+<hr><em>[From Manipulating strings]</em></hr>    
 </article>
 <article>
 <div></div>
@@ -431,19 +440,6 @@ ids = {'Ali':52, 'Bob':254, 'Candice':734}
 <div></div>
 <hr><em>[From Functions]</em></hr>
 
-<section>
-<header>Create a function</header>
-<code class="syntax">def <span class="function">function_name</span>(<span class="method">param_name</span>):
-  # Code to run (indented) when the method is called
-  # Most functions will want to return something
-  # Parameter values are refered to using the name given above
-</code>
-<code class="example">def times_2(num):
-    return num * 2
-</code>
-<div>Convention: make methods have an <em>action (verb)</em> name</div>
-<div>Note: you call your own functions in the same way as you call the built-in ones</div>
-</section>
 </article>
 -->
 <div>&nbsp;</div>
