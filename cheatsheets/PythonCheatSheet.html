@@ -6,7 +6,7 @@
 <header>Python Cheatsheet</header>
 
 <p>The Python syntax found here will be used <em>continually</em> throughout this course. It should be committed to memory. If you have to constantly be referring back to it, the assignments will take you twice as long to do and you will lose precious time. Even though this cheatsheet will always be available to you (except for quizzes and tests), it would be good to maintain your own version (written out) in your notes for easier access and to help you memorize the contents.</p>
-
+<!--
 <article>
     <div></div>
     <hr><em>[From Module 1: Write your first program]</em></hr>
@@ -103,21 +103,15 @@ turtle.forward(100)</code>
     <section>
         <header>Decisions with two options</header>
         <code class="syntax"><span class='keyword'>if</span> <span class='value'>boolean_expression</span>:
-    # Code to run when boolean_expression is True<!--
-<span class='keyword'>elif</span> <span class='value'>boolean_expression_2<span>:
-    # Code to run when boolean_expression_1 is False
-    # AND boolean_expression_2 is True
--->
+    # Code to run when boolean_expression is True
 <span class='keyword'>else</span>:
     # Code to run when boolean_expression is False</code>
 <code class="example">if age >= 18:
-    print("You're legally an adult'")<!--
-elif age > 13:
-    print("You're a teenager")-->
+    print("You're legally an adult'")
 else:
     print("You're just a little kid")</code>
         <div>The <span class='value'>boolean_expression</span> must be something that evaluates to True or False. If it doesn't (e.g 3 + 5) it will produce a TypeError.</div>
-        <div>The <span class='keyword'>else</span> <!--and the <span class='keyword'>elif</span> parts are--> part is optional but the <span class='keyword'>if</span> part is NOT optional (you can't have an <span class='keyword'>else</span> without an <span class='keyword'>if</span>)</div>
+        <div>The <span class='keyword'>else</span> part is optional but the <span class='keyword'>if</span> part is NOT optional (you can't have an <span class='keyword'>else</span> without an <span class='keyword'>if</span>)</div>
         <div>Also note that the <span class='keyword'>else</span> does <em>NOT</em> have a condition. Its condition is implicitly the opposite of the <span class='keyword'>if</span>'s. If you try to put a condition after an <span class='keyword'>else</span> it will produce a syntax error.</div>
     </section>
 </article>    
@@ -244,84 +238,11 @@ word[-1] # also gives us "o"</code>
         <div>Convention: make methods have an <em>action (verb)</em> name</div>
         <div>Note: you call your own functions in the same way as you call the built-in ones (e.g. print, input, etc.)</div>
     </section>
-</article>    
-
-<!--
-<article>
-    <div></div>
-    <hr><em>[From Module 9: More on functions]</em></hr>
-</article>    
-
-<article>
-    <div></div>
-    <hr><em>[From Module 10: x and y coordinates]</em></hr>
-</article>    
--->
-
-
-
-
-
-
-
-<!--
-<article>
-<div></div>
-<hr><em>[From Talking to your computer]</em></hr>
-
 </article>
 
 <article>
 <div></div>
-<hr><em>[From Calculating things]</em></hr>
-<section>
-    <header>Built-in functions</header>
-    <div>There are a bunch of built-in functions that you learn here but the "syntax" for all functions is the same (see "Call a function..." sections above) so they won't be covered here.
-        See the <a href="https://docs.python.org/3/library/functions.html">documentation here</a> for more details on these functions (input, int, len, print, str) and others that are available. Note that many of these return a value so if you don't save it in a variable it does <strong>nothing</strong>.
-    </div>
-    <div>Example: pointless function call (second line below)</div>
-    <code class="example">numerals = input("Type a number: ")
-int(numerals)</code>
-    <div>The variable <var>numerals</var> is still just a bunch of letters because you didn't <em>do</em> anything with the result of the function int()</div>
-    <div>Example: purposeful function call</div>
-    <code class="example">numerals = input("Type a number: ")
-number = int(numerals)</code>
-</section>
-</article>
-<article>
-<div></div>
-<hr><em>[From Making decisions]</em></hr>
-</article>
-<article>
-<div></div>
-<hr><em>[From Manipulating strings]</em></hr>    
-</article>
-<article>
-<div></div>
-<hr><em>[From Repeating things]</em></hr>
-
-
-<section>
-<header>Slicing syntax for sequences (including strings)</header>
-<code class="syntax"># Between 2 indecies
-<var>sequence</var>[<span class="placeholder">startIndex</span>:<span class="placeholder">endIndex</span>]
-# Up to an index
-<var>sequence</var>[<span class="placeholder">startIndex</span>:]
-# After an index
-<var>sequence</var>[:<span class="placeholder">endIndex</span>]
-</code>
-<code class="example">letters = "abcdefgh"
-letters[2:6] # gives us "cdef"
-letters[:4] # gives us "abcd"
-word[4:] # gives us "efgh"</code>
-<div>Note: indecies are zero-based</div>
-<div>Note: if the index used is bigger than the size of the string, you will get an IndexError</div>
-<div>Note: By itself, the bracket notation doesn't do anything. You will want to remember it, print it or use it in some way</div>
-</section>
-</article>
-<article>
-<div></div>
-<hr><em>[From Storing lists of values]</em></hr>
+<hr><em>[From lecture: storing lists of values]</em></hr>
 
 <section>
 <header>Create a list with pre-determined values</header>
@@ -331,16 +252,30 @@ word[4:] # gives us "efgh"</code>
 
 <section>
 <header>Get the size of a list</header>
-<code class="syntax">len(<var>list_variable</var>)</code>
+<code class="syntax">len(<var>list_name</var>)</code>
 <code class="example">len(primes)</code>
 <div>By itself, this doesn't do anything. It's just a value that you can use in another statement.</div>
 </section>
 
 <section>
+<header>Get a value from a list</header>
+<code class="syntax"><var>list_name</var>[<span class="placeholder">index</span>]</span></code>
+<code class="example">print(primes[3])</code>
+<div>Note: this is similar to getting a character from within a string and the same rules apply</div>
+</section>
+    
+<section>
 <header>Set the value of an element in a list</header>
 <code class="syntax"><var>list_name</var>[<span class="placeholder">index</span>] = <span class="placeholder">new_value</span></code>
-<code class="example">nums[3] = 10</code>
-<div>Note: if the index used is bigger than the size of the list, you will get an IndexError</div>
+<code class="example">primes[3] = 47</code>
+<div>Note: we couldn't do this with strings because strings are immutable (unchangeable) but lists are mutable</div>
+</section>
+
+<section>
+<header>Add a new element to the end of a list</header>
+<code class="syntax"><var>list_name</var> += [<span class="placeholder">new_value</span>]</code>
+<code class="example">primes += [103]</code>
+<div>Note: there are other ways to change lists using the various <a href="https://www.w3schools.com/python/python_ref_list.asp">list methods</a></div>
 </section>
 
 <section>
@@ -350,96 +285,13 @@ word[4:] # gives us "efgh"</code>
     # do something with each of the items in the list
     # anywhere you use <var>variable_name</var> here it will refer
     #   to the <em>current</em> value in the list</code>
-<code class="example">numbers = [1, 2, 3, 4, 5, ...]
+<code class="example">numbers = [1, 2, 3, 4, 5]
 # prints the square of each number in the list...
 for num in numbers:
     print(num * num)
 </code>
+<div>Note: this is also similar to strings but unlike strings we're going through the items, not characters</div>
 </section>
-</article>
-
-
-<article>
-<div></div>
-<hr><em>[From Looping in the unknown]</em></hr>
-
-<section>
-<header>Execute code as long as a condition is True</header>
-<code class="syntax"><span class='keyword'>while</span> <span class='value'>loopCondition</span> :
-    # Code to run as long as the
-    # loop condition is True
-</code>
-<code class="example">password = None
-while password != "abc123":
-    password = input("What's the password: ")
-</code>
-<div>Use this kind of loop in situations where you don't know how many times the loop will have to run. In this case, we don't know how many times the password will be entered incorrectly before the user will enter the correct password (ie. sabc123). They may enter it correctly on the first try or it may take them 20 tries to enter the correct password.</div>
-</section>
-</article>
-
-<article>
-<div></div>
-<hr><em>[From Dictionaries]</em></hr>
-
-<section>
-<header>Create a dictionary</header>
-<code class="syntax"><span class='placeholder'>dict_variable_name</span> = {<span class='value'>key1</span>:<span class='value'>value1</span>, <span class='value'>key2</span>:<span class='value'>value2</span>}</code>
-<code class="example">empty_dict = {}
-ids = {'Ali':52, 'Bob':254, 'Candice':734}
-</code>
-<div>Dictionaries should usually be named after the value, not the key. Note the name of the dictionary in the example above. It's not called "names". You use the employee (name) to lookup their id.</div>
-</section>
-    
-<section>
-<header>Get a value out of a dictionary</header>
-<code class="syntax"><span class='placeholder'>dict_variable_name</span>[<span class='value'>key</span>]</code>
-<code class="example">ids['Ali']</code>
-<div>You would never have this code by itself because it doesn't <em>do</em> anything. You would probably want to print it or save it in a variable or something.</div>
-</section>
-        
-<section>
-<header>Add a new key/value pair to a dictionary</header>
-<code class="syntax"><span class='placeholder'>dict_variable_name</span>[<span class='value'>new_key</span>] = <span class='value'>value</span></code>
-<code class="example">ids['Dohan'] = 8298</code>
-<div>new_key has to be a new key or else it will <em>replace</em> the existing value assigned to that key</div>
-</section>
-        
-<section>
-<header>Replace a value assigned to a key in a dictionary</header>
-<code class="syntax"><span class='placeholder'>dict_variable_name</span>[<span class='value'>existing_key</span>] = <span class='value'>new_value</span></code>
-<code class="example">ids['Ali'] = 53</code>
-</section>
-
-<section>
-<header>Check if a key is in a dictionary</header>
-<code class="syntax"><span class='value'>key</span> <span class='keyword'>in</span> <span class='placeholder'>dict_variable_name</span></code>
-<code class="example">'Ali' in ids</code>
-<div>By itself this statement doesn't do anything but it can be used wherever a boolean expression can be used (e.g. in an if-statement)</div>
-<div>You <em>cannot</em> use this to check if a value is in the dictionary, only keys</div>
-</section>
-</article>
-
-<article>
-<div></div>
-<hr><em>[From Files]</em></hr>
-
-<section>
-<header>Automatically close a file</header>
-<code class="syntax">with <span class="function">open</span>(<span class="placeholder">'file_name'</span>) as <span class='placeholder'>file_variable</span>:
-  # Code to use the file...
-</code>
-<code class="example">with open("nums.txt") as myfile:
-    for num in myfile:
-        print(num)
-</code>
-<div>Note: this syntax is not necessary. It's just a convenience so that you don't forget to close a file after you open it. Python will close it automatically when you get to the end of the "with" block.</div>
-</section>
-</article>
-
-<article>
-<div></div>
-<hr><em>[From Functions]</em></hr>
-
 </article>
 -->
 <div>&nbsp;</div>

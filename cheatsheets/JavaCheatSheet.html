@@ -6,7 +6,7 @@
 <header>Java Cheatsheet</header>
 
 <p>The Java syntax found here will be used <em>continually</em> throughout this course. It should be committed to memory. If you have to constantly be referring back to it, the assignments will take you twice as long to do and you will lose precious time. Even though this cheatsheet will always be available to you (except on a test), it would be good to maintain your own version (written out) in your notes for easier access and to help you memorize the contents.</p>
-
+<!--
 <hr style="page-break-before: always;"><em>[From Basic Commands]</em></hr>
 
 <section>
@@ -692,70 +692,7 @@ nums[nums.length - 1] // Last value</code>
 matrix[0].length // num columns</code>
 <div>Using the first row to determine how wide the array is assumes that the array is not jagged, but this is normally the case.</div>
 </section>
-    
-<!--
 
-<div></div>
-<hr style="page-break-before: always;"><em>[Testing Notes (FYI only: not on the AP exam, won't be tested in this class)]</em></hr>
-
-<section>
-<header>Make an assertion test</header>
-<code class="syntax">assert <span class='placeholder'>somethingThatShouldBeTrue</span> : <span class='placeholder'>extraInfoToPrintWhenItsNot</span>;</code>
-<code class="example">assert list.size() == 5 : list.toString();</code>
-</section>
-
-<section>
-<header>Write unit tests</header>
-<code class="syntax">import org.junit.*;
-
-public class TesterClass {
-    // optional: put any instance variables here
-
-    // This method is optional
-    <span class='keyword'>@Before</span>
-    public void setup() {
-        // common code to setup for each tests
-    }
-
-    <span class='keyword'>@Test</span>
-    public void <span class='placeholder'>testName</span>() {
-        // use assertions to test
-        <span class='keyword'>assert</span> something == somethingElse: "They're not equal";
-    }
-
-    // This method is optional
-    <span class='keyword'>@After</span>
-    public void cleanup() {
-        // code to cleanup after each test
-    }
-}</code>
-<code class="example">import org.junit.*;
-
-public class TimeRunner {
-    private Time t1;
-
-    @Before
-    public void createTimes() {
-        t1 = new Time(2, 37, 15);
-    }
-
-    @Test
-    public void testNormalHour() {
-        assert t1.getHour() == 2: "Bad hour";
-    }
-
-    @Test
-    public void testNormalMinute() {
-        assert t1.getMinute() == 37: "Bad minute";
-    }
-
-    @Test
-    public void testNormalSecond() {
-        assert t1.getSecond() == 15: "Bad second";
-    }
-}</code>
-</section>
--->
 <div></div>
 <hr style="page-break-before: always;"><em>[From the Java Standard Collections lesson]</em></hr>
 
@@ -801,6 +738,7 @@ for (Integer num : numbers) {
 }</code>
 <div>The collection can be anything that implements the <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html">Iterable</a> interface which includes arrays and all the Java standard collections (among other things)</div>
 </section>  
+-->
 
 <div>&nbsp;</div>
 <div>&nbsp;</div>
