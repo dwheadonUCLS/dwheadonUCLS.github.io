@@ -6,7 +6,9 @@
 <header>Java Cheatsheet</header>
 
 <p>The Java syntax found here will be used <em>continually</em> throughout this course. It should be committed to memory. If you have to constantly be referring back to it, the assignments will take you twice as long to do and you will lose precious time. Even though this cheatsheet will always be available to you (except on a test), it would be good to maintain your own version (written out) in your notes for easier access and to help you memorize the contents.</p>
-<!--
+
+<article>
+<div></div>
 <hr style="page-break-before: always;"><em>[From Basic Commands]</em></hr>
 
 <section>
@@ -63,7 +65,10 @@ RED
 NORTH</code>
 <div>Note: final values (ones that can't change) are typically in all UPPERCASE</div>
 </section>
-
+</article>
+<!--
+<article>
+<div></div>
 <hr style="page-break-before: always;"><em>[From the Variables lesson]</em></hr>
 
 <section>
@@ -119,7 +124,9 @@ oppositeSide = Math.sin(45) * h;
 <code class="syntax"><span class="type">VariableType</span> <var>variableName</var> = <span class="value">initialValue</span>;</code>
 <code class="example">double pi = 3.14;</code>
 </section>
+</article>
 
+<article>
 <div></div>
 <hr style="page-break-before: always;"><em>[From the Static Methods lesson]</em></hr>
 
@@ -168,7 +175,9 @@ double distance = Math.sqrt(x * x + y * y);</code>
  * contain HTML. They should be placed immediately before a method
  */</code>
 </section>
-    
+</article>
+
+<article>    
 <div></div>
 <hr style="page-break-before: always;"><em>[From the For Loops lesson]</em></hr>
 
@@ -211,7 +220,9 @@ numApples -= 2;
 numApples--;
 </code>
 </section>
+</article>
 
+<article>
 <div></div>
 <hr style="page-break-before: always;"><em>[From the Conditionals lesson]</em></hr>
 
@@ -252,7 +263,9 @@ karel.frontIsClear() &amp;&amp; row > 10</code>
 <div>Boolean operators: &nbsp; &amp;&amp; &nbsp; || &nbsp; !</div>
 <div>String methods: see <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/String.html">the docs</a> (especially equals and contains)</div>
 </section>
+</article>
 
+<article>
 <div></div>
 <hr style="page-break-before: always;"><em>[From the While Loops lesson]</em></hr>
 
@@ -292,7 +305,9 @@ for (int i = 15; i &lt; 100; i++) {
     System.out.println(i);
 }</code>
 </section>
+</article>
 
+<article>
 <div></div>
 <hr style="page-break-before: always;"><em>[From the Method Return Values lesson]</em></hr>
 
@@ -318,8 +333,9 @@ public static <span class="type">returnType</span> <span class="method">methodNa
 }</code>
 <div>These static methods are called the same way but the value that is returned will replace the function call and can be printed, used in a variable assignment or some other expression.</div>
 </section>
+</article>
 
-
+<article>
 <div></div>
 <hr style="page-break-before: always;"><em>[From the Exceptions lesson]</em></hr>
 
@@ -377,7 +393,9 @@ while (s.hasNextLine()) {
     }
 }</code>
 </section>
-  
+</article>
+
+<article>
 <div></div>
 <hr style="page-break-before: always;"><em>[From the Instance Variables lesson]</em></hr>
 
@@ -419,8 +437,9 @@ while (s.hasNextLine()) {
 <code class="example">Employee emp1 = new Employee("Gene Harmon", 32);</code>
 <div>The required parameter values are defined by the constructor definition. The types of the parameters and the types of the values <em>must</em> match.</div>
 </section>
+</article>
 
-
+<article>
 <div></div>
 <hr style="page-break-before: always;"><em>[From the Instance Methods lesson]</em></hr>
 
@@ -457,7 +476,9 @@ while (s.hasNextLine()) {
 <code class="syntax">objectVariable.methodName(required, parameter, values);</code>
 <code class="example">bob.getPaid(102.50);</code>
 </section>
+</article>
 
+<article>
 <div></div>
 <hr style="page-break-before: always;"><em>[From the Inheritance lesson]</em></hr>
 
@@ -509,8 +530,9 @@ if (p instanceof Employee) {
     // Safe to cast p to an Employee
 }</code>
 </section>
-        
+</article>
 
+<article>
 <div></div>
 <hr style="page-break-before: always;"><em>[From the Override lesson]</em></hr>
 
@@ -537,7 +559,9 @@ if (p instanceof Employee) {
   The <span class="keyword">@Override</span> notation isn't strictly necessary but it's <em>very</em> good practice... ahem.
 </div>
 </section>
+</article>
 
+<article>
 <div></div>
 <hr style="page-break-before: always;"><em>[From the Abstract classes and Interfaces lesson]</em></hr>
 
@@ -594,8 +618,9 @@ public abstract double calcArea();</code>
 }</code>
 <div>A class can inherit from only one other class but you can implement as many interfaces as you desire.</div>
 </section>
+</article>
 
-
+<article>
 <div></div>
 <hr style="page-break-before: always;"><em>[From the Array Basics lesson]</em></hr>
 
@@ -646,9 +671,9 @@ nums[nums.length - 1] // Last value</code>
 <code class="example">nums[3] = 10;</code>
 <div>Note: if the index used is bigger than the size of the array, you will get an ArrayIndexOutOfBoundsException</div>
 </section>
-    
+</article>
 
-
+<article>
 <div></div>
 <hr style="page-break-before: always;"><em>[From the 2D Arrays lesson]</em></hr>
 
@@ -692,7 +717,9 @@ nums[nums.length - 1] // Last value</code>
 matrix[0].length // num columns</code>
 <div>Using the first row to determine how wide the array is assumes that the array is not jagged, but this is normally the case.</div>
 </section>
+</article>
 
+<article>
 <div></div>
 <hr style="page-break-before: always;"><em>[From the Java Standard Collections lesson]</em></hr>
 
@@ -704,7 +731,9 @@ matrix[0].length // num columns</code>
 <div>You can use the <span class="type">CollectionType</span> on both sides but using the generic <span class="placeholder">Interface</span> allows you to easily swap in a different <span class="type">CollectionType</span> that implements that same <span class="placeholder">Interface</span>.</div>
 <div>Note: <span class="type">ContentType</span> CANNOT be a primitive data type (boolean, int, double) but there are class equivalents for each of them (Boolean, Integer, Double) precisely for this purpose.</div>
 </section>
+</article>
 
+<article>
 <div></div>
 <hr style="page-break-before: always;"><em>[From the for-each loops lesson]</em></hr>
 
