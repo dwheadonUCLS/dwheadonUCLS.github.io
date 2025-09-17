@@ -17,9 +17,13 @@ eastwestwalls 1 8 8
 eastwestwalls 8 3 3
 eastwestwalls 8 2 2
 eastwestwalls 8 1 1
+eastwestwalls 1 3 3
+eastwestwalls 2 3 3
 eastwestwalls 1 2 2
 eastwestwalls 1 1 1
 eastwestwalls 7 8 8
+eastwestwalls 6 3 3
+eastwestwalls 7 3 3
 eastwestwalls 7 2 2
 eastwestwalls 7 1 1
 eastwestwalls 3 9 9
@@ -32,6 +36,6 @@ northsouthwalls 8 8 8
 northsouthwalls 8 6 6
 northsouthwalls 9 4 4
 northsouthwalls 7 2 2
-northsouthwalls 2 6 6
+northsouthwalls 3 6 6
 northsouthwalls 3 2 2
 northsouthwalls 9 5 5
