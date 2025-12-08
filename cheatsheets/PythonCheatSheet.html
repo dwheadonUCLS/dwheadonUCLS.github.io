@@ -304,6 +304,48 @@ print(f"Final num {num}")</code>
 <div>This kind of loop is usefull when you don't know how many times it will run.</div>
 </section>
 </article>
+
+<article>
+<div></div>
+<hr><em>[From Course 2, Module 2: Dictionaries]</em></hr>
+<section>
+<header>Create a dictionary with pre-determined values</header>
+<code class="syntax">{<span class="placeholder">key1</span>: <span class="placeholder">value1</span>, <span class="placeholder">key2</span>: <span class="placeholder">value2</span>}</code>
+<code class="example">sides = {'triangle': 3, 'square': 4, 'rectangle': 4}</code>
+</section>
+
+<section>
+<header>Get a value associated with a key in a dictionary</header>
+<code class="syntax"><var>dict_name</var>[<span class="placeholder">some_key</span>]</span></code>
+<code class="example">print(sides['square'])</code>
+</section>
+
+<section>
+<header>Set the value associated with a key in a dictionary</header>
+<code class="syntax"><var>dict_name</var>[<span class="placeholder">some_key</span>] = <span class="placeholder">some_value</span></code>
+<code class="example">sides['pentagon'] = 5</code>
+<div>The key could already be in the dictionary (in which case, the existing value will be replaced) or it could be new to the dictionary (in which case, it is added)</div>
+</section>
+
+<section>
+<header>Check if a key is in a dictionary</header>
+<code class="syntax"><span class="placeholder">some_key</span> in <var>dict_name</var></code>
+<code class="example">'square' in sides</code>
+<div>By itself, this doesn't do anything. It's just a value that you can use in an if-statement. Oftentimes you will want to check if a key is already in a dictionary before attempting to update its value.</div>
+</section>
+
+<section>
+<header>Go through a dictionary</header>
+<div>When you go-through a dictionary, it goes through the <em>keys</em>:</div>
+<code class="syntax">for <var>key_variable_name</var> in <var>some_dict</var>:
+    # do something with each of the keys in the dictionary
+    # anywhere you use <var>key_variable_name</var> here it will refer
+    #   to the <em>current</em> key in the dictionary</code>
+<code class="example">for shape in sides:
+    print(f"A {shape} has {sides[shape]} sides")
+</code>
+</section>
+</article>
 <div>&nbsp;</div>
 <div>&nbsp;</div>
 </body>
