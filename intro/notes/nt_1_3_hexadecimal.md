@@ -13,7 +13,7 @@ _____  _____  _____  _____  _____
 
 Digits in hexedecimal can be values from 1 to 15 but we can't use 10 - 15 because those are actually 2 digits.
 
-### Example: why 15 can't be used in hexadecimal
+### Example: why 15 can't be used as the number fifteen in hexadecimal
 ```
  1   5 
 __  __ == 16 + 5 == 21
