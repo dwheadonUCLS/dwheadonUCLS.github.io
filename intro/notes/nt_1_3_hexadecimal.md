@@ -32,7 +32,7 @@ So instead we use capital letters A-F to represent these values with a single di
 
 ## Disambiguation
 
-Like binary, we need a way to indicate that a number is actually hexedecimal. For example `11` in base-10 is "eleven" but in hexadecimal is 17. To do this we use the prefix `0x` so that when we see `0x11` we know that it's actually the hexadecimal for 17.
+Like binary, we need a way to indicate that a number is actually hexedecimal. For example `11` in base-10 is "eleven" but in hexadecimal it is 17. To do this we use the prefix `0x` so that when we see `0x11` we know that it's actually the hexadecimal for 17.
 
 ## Why hexadecimal
 
