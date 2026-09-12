@@ -1,3 +1,5 @@
+# Text Encoding
+
 * encode: turn something into the binary that a computer can store
 * decode: turn some binary back into the thing it was intended to represent
 * ASCII: American Standard Code for Information Interchange: the standard that specifies what 1-byte number each character on your keyboard corresponds to
