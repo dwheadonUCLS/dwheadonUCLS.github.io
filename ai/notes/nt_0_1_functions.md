@@ -1,3 +1,5 @@
+# Functions
+
 DRY is the principle that all programmers live by
 * Don't
 * Repeat
@@ -16,6 +18,7 @@ def function_name(param_1_name, param_2_name, etc):
     # Parameter values are refered to using the names given above
     # Most functions will want to return something at the end
 ```
+
 * generally `function_name` should start with an action verb and should **not** be the same as a built-in / imported variable or function
 * if a function doesn't return a value `None` is returned by default
 
