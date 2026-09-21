@@ -1,11 +1,13 @@
 f-strings allow easily putting values into strings
 ```python
 f"some text with {some_value + or_calcualtion} embedded inside"
+```
 
 Get a character at a specific (zero-based) position in a string:
 ```python
 string[index]
 ```
+
 * indecies are zero-based (the first letter is at position 0)
 * a negative index will start at the end of the string
 * if the index used is bigger than the size of the string, you will get an `IndexError`
