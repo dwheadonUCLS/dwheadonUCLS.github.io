@@ -44,9 +44,9 @@ karel.frontIsClear() && row > 10
 Comparison operators:   <   <=   ==   !=   >=   >
 
 Boolean operators:   
-* and: &&
-* or: ||   
-* not: !
+* and: `&&`
+* or: `||`   
+* not: `!`
 
 The "and" and "or" operators take two operands (left and right) while the "not" operator only takes one operand (right)
 
