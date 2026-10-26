@@ -7802,7 +7802,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Welcome-to-the-Python-Programming-Unit">Welcome to the Python Programming Unit<a class="anchor-link" href="#Welcome-to-the-Python-Programming-Unit">¶</a></h1><p>We will be using Jupyter notebooks (files that end with the <code>.ipynb</code> extension) to learn the basics of programming with Python. Jupyter notebooks allow you to interlace Markdown-formatted text (instructions and explanations) with Python code that you can run and see the results in the same document. Before this will work properly, you'll first need to do a few things.</p>
+<h1 id="Welcome-to-the-Python-Programming-Unit">Welcome to the Python Programming Unit<a class="anchor-link" href="#Welcome-to-the-Python-Programming-Unit">¶</a></h1><p>We will be using Jupyter notebooks (files that end with the <code>.ipynb</code> extension) to learn the basics of programming with Python. Jupyter notebooks allow you to interlace Markdown-formatted text (instructions and explanations) with Python code that you can run and see the results in the same document.</p>
+<h2 id="Install-(for-home-computers-or-laptops-only)">Install (for home computers or laptops only)<a class="anchor-link" href="#Install-(for-home-computers-or-laptops-only)">¶</a></h2><p>Before this will work properly, you'll first need to do a few things. This step should be skipped if you're working on a Lab computer.</p>
 <p>First off, download and install:</p>
 <ul>
 <li><a href="https://workspace.google.com/products/drive/#download">Google Drive for Desktop</a></li>
@@ -7817,13 +7818,14 @@ a.anchor-link {
 </li>
 <li><a href="https://code.visualstudio.com/">Visual Studio Code</a>: put this in your Applications folder...</li>
 </ul>
-<p>After it's installed, run Google Drive for Desktop and sign in to your UCLS account. Once you finish signing in, you should see an icon in your icon-tray that looks like this (background color may vary):</p>
+<h2 id="Configure">Configure<a class="anchor-link" href="#Configure">¶</a></h2><p>After everything is installed, run Google Drive for Desktop and sign in to your UCLS account. Once you finish signing in, you should see an icon in your icon-tray that looks like this (background color may vary):</p>
 <p><img alt="Google Drive: Running" src="../images/GoogleDriveRunning.png"/></p>
 <p>If at any time this icon becomes "grey-ed out" (background color may vary):</p>
 <p><img alt="Google Drive: Crashed" src="../images/GoogleDrivePaused.png"/></p>
 <p>That probably means that it crashed and is not currently syncing your files. Unless you manually paused it, the simplest way to fix this is to restart your computer but it can also be solved by opening the Activity Monitor (on MacOS) or Task Manager (on Windows), killing the Google Drive process(es) and restarting the application.</p>
 <p>Once your Google Drive is running and syncing properly, you'll need to run Visual Studio Code.</p>
 <p><img alt="Visual Studio Code: App" src="../images/VSCodeApp.png"/></p>
+<p>It may ask you to sign in to GitHub, you should skip that...</p>
 <p>On the left toolbar strip, you'll see an icon that looks like this:</p>
 <p><img alt="Visual Studio Code: Extensions Tab" src="../images/VSCodeExtensionsTab.png"/></p>
 <p>Click on that and search for "Python". One of the first things that should come up is simply called "Python" (by Microsoft). Click on this and choose to "Install" it. Next search for "Jupyter". The first thing that should come up is simply called "Jupyter" (again by Microsoft). Click on this and choose to "Install" it as well.</p>
@@ -7834,22 +7836,35 @@ a.anchor-link {
 <p><img alt="Visual Studio Code: Run Tab" src="../images/VSCodeRunTab.png"/></p>
 <p>You should see the "Install prereqs" configuration there:</p>
 <p><img alt="Visual Studio Code: Install prereqs" src="../images/VSCodeRunPrereqs.png"/></p>
-<p>Click on the green arrow to run the installation and make sure that it succeeds. If not, show your instructor.</p>
-<p>Thus far you have been following these instructions from a website but now you can open these very same instructions in Visual Studio Code by looking for / opening <code>cw_2_0_intro_to_programming.ipynb</code> in the <code>classwork</code> folder. Do that now...</p>
-<p>The final test will be to see if we can run some Python code. In the top-right you should see a button that says "Select Kernel". Click on that and then choose "Python Environments..." And then you should see "Python 3.13.14" as an option (if not, you probably neglected to install Python or you installed the wrong version). Choose that and hover your mouse cursor over the box below. When you hover over it you should see a "play" button (right-pointing triangle) to the left of the box. Click on the triangle run the code. You'll see the results appear below the code block if it is successful.</p>
+<p>Click on the green arrow to run the installation and make sure that it succeeds. Don't worry about any "warnings" but if you get any errors, show your instructor.</p>
+<p>Thus far you have been following these instructions from a website but now you can open these very same instructions in Visual Studio Code by looking for / opening <code>cw_2_0_intro_to_programming.ipynb</code> in the <code>classwork</code> folder. Do that now and follow the rest of the instructions in Visual Studio Code...</p>
+<h2 id="In-Visual-Studio-Code">In Visual Studio Code<a class="anchor-link" href="#In-Visual-Studio-Code">¶</a></h2><p>The final test will be to see if we can run some Python code. In the top-right you should see a button that says "Select Kernel". Click on that and then choose "Python Environments..." And then you should see "Python 3.13.14" as an option (if not, you probably neglected to install Python or you installed the wrong version). Choose that and hover your mouse cursor over the box below. When you hover over it you should see a "play" button (right-pointing triangle) to the left of the box. Click on the triangle run the code. You'll see the results appear below the code block if it is successful.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3fe52068">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3fe52068">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello World"</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Hello World
+</pre>
 </div>
 </div>
 </div>
